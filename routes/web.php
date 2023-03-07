@@ -1,7 +1,8 @@
 <?php
-
+use App\Http\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Contoller\UserContoller;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,8 @@ Route::get('/about', function () {
     ]);
 }); 
 
-Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::match(['get','post'], '/edit/{eid}',[Studentcontroller::class,'edit'])->name('edit_other_name');
+Route::group(['middleware' => ['auth:pengguna', 'cekLevel:mhs']], function () {
+});
+
