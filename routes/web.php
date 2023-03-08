@@ -17,7 +17,7 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', function () {
-    return view (' home',[
+    return view ('home',[
         "title" => "Home",
         "active" => 'home'
     ]);
@@ -38,7 +38,7 @@ Route::get('/about', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::post('/logout', [LoginController::class, 'logout'])->name('login')->middleware('guest');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 

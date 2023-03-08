@@ -124,13 +124,12 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="{{url('/login')}}" class="nav-link">
+        <a href="{{route ('logout')}}" class="nav-link">
           <i class="fa-solid fa-lock"></i>
           <p>
             Logout
           </p>
         </a>
       </li>
-      
   </nav>
 </div>

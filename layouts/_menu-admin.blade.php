@@ -124,7 +124,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{url('/login')}}" class="nav-link">
+            <a href="{{url('/logout')}}" class="nav-link">
               <i class="fa-solid fa-lock"></i>
               <p>
                 Login
