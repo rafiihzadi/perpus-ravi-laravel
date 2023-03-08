@@ -7,13 +7,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         return view('login.index', [
-            'title' => 'Login',
-            'active' => 'login'
-        
-        ]);
+            'title' => 'Form login',
+       ]);
     }
 
     public function authenticate(Request $request)
@@ -33,7 +30,7 @@ class LoginController extends Controller
 
     }
 
-    public function logout($request)
+    public function logout(Request $request)
     {
         Auth::logout();
 
@@ -41,7 +38,7 @@ class LoginController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login');
     }
 
 }

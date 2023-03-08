@@ -2,7 +2,8 @@
 use App\Http\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Contoller\UserContoller;
+use App\Http\Controllers\DashboardController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,7 @@ Route::get('/about', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
-Route::get('/logout', [LoginController::class, 'logout'])->name('login')->middleware('guest');
+Route::post('/logout', [LoginController::class, 'logout'])->name('login')->middleware('guest');
 
+Route::get('/dashboard', [DashboardController::class, 'index']);
 
