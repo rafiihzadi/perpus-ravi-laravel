@@ -29,7 +29,7 @@
             with font-awesome or any other icon font library -->
       <li class="nav-item menu-open">
         <a href="{{ url('/dashboard') }}" class="nav-link active">
-          <i class="fa fa-tachometer" aria-hidden="true"></i>
+          <i class="nav-icon fa fa-tachometer-alt"></i>
           <p>
             Dashboard
           </p>
@@ -37,7 +37,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="" class="nav-link">
+        <a href="pages/widgets.html" class="nav-link">
           <i class="fa-solid fa-book"></i>
           <p>
             Data Buku

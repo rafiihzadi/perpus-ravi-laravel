@@ -42,3 +42,4 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
+Route::get('/data-buku', 'BukuController@index')->name('data-buku');
