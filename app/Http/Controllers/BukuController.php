@@ -13,7 +13,7 @@ class BukuController extends Controller
      */
     public function index()
     {
-        return view('Buku.Data-buku');
+        return view('buku.index');
     }
 
     /**

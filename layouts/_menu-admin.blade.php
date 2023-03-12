@@ -10,18 +10,6 @@
         </div>
       </div>
 
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -37,7 +25,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ url('/book') }}" class="nav-link">
+            <a href="{{ url ('/buku') }}" class="nav-link">
               <i class="fa-solid fa-book"></i>
               <p>
                 Data Buku

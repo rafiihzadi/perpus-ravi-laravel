@@ -3,6 +3,7 @@ use App\Http\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\BukuController;
 
 
 /*
@@ -42,4 +43,4 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
-Route::get('/data-buku', 'BukuController@index')->name('data-buku');
+Route::get('/buku', [BukuController::class, 'index']);

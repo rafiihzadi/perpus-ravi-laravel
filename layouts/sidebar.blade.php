@@ -15,7 +15,7 @@
     </a>
 
     
-      @include('/layouts/_menu-admin')
+      @include('layouts/_menu-admin')
     
 
   </aside>
