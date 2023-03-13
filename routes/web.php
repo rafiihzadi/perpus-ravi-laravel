@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\BukuController;
+use App\Http\Controllers\PenulisController;
+use App\Http\Controllers\PenerbitController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamController;
+
 
 
 /*
@@ -44,3 +49,7 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/buku', [BukuController::class, 'index']);
+Route::get('/penulis', [PenulisController::class, 'index']);
+Route::get('/penerbit', [PenerbitController::class, 'index']);
+Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/peminjam', [PeminjamController::class, 'index']);
