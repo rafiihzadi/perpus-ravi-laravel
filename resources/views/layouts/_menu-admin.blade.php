@@ -66,7 +66,7 @@
       </li>
         
       <li class="nav-item">
-        <a href="" class="nav-link">
+        <a href="{{url('/peminjam') }}" class="nav-link">
           <i class="fa-solid fa-bookmark"></i>
           <p>
             Peminjam

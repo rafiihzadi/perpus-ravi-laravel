@@ -11,6 +11,7 @@ use App\Http\Controllers\PeminjamController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -44,12 +45,15 @@ Route::get('/about', function () {
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 
+
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/buku', [BukuController::class, 'index']);
+Route::get('/buku/create', [BukuController::class, 'create']);
 Route::get('/penulis', [PenulisController::class, 'index']);
 Route::get('/penerbit', [PenerbitController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/peminjam', [PeminjamController::class, 'index']);
+
