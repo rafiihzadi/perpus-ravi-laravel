@@ -50,8 +50,15 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
+//Buku
 Route::get('/buku', [BukuController::class, 'index']);
-Route::get('/buku/create', [BukuController::class, 'create']);
+Route::get('/create', [BukuController::class, 'create']);
+
+
+
+
+
+
 Route::get('/penulis', [PenulisController::class, 'index']);
 Route::get('/penerbit', [PenerbitController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
