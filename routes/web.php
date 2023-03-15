@@ -67,9 +67,4 @@ Route::get('/create', [PeminjamController::class, 'create']);
 
 
 
-Route::get('/penulis', [PenulisController::class, 'index']);
-Route::get('/penerbit', [PenerbitController::class, 'index']);
-Route::get('/kategori', [KategoriController::class, 'index']);
-Route::get('/peminjam', [PeminjamController::class, 'index']);
-
 
