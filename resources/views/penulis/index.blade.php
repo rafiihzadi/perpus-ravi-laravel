@@ -36,13 +36,13 @@
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
                 <tr>
-                    <th style="text-align:center;">no</th>
-                    <th style="text-align:center;">nama</th>
-                    <th style="text-align:center;">alamat</th>
-                    <th style="text-align:center;">no telephon</th>
-                    <th style="text-align:center;">email</th>
-                    <th style="text-align:center;">jumlah buku</th>
-                    <th style="text-align:center">opsi</th>
+                    <th style="text-align:center;">No</th>
+                    <th style="text-align:center;">Nama</th>
+                    <th style="text-align:center;">Alamat</th>
+                    <th style="text-align:center;">No.Telepon</th>
+                    <th style="text-align:center;">Email</th>
+                    <th style="text-align:center;">Jumlah Buku</th>
+                    <th style="text-align:center">Opsi</th>
                     
                 </tr>
                 
