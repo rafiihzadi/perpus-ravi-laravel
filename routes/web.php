@@ -52,13 +52,23 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 //Buku
 Route::get('/buku', [BukuController::class, 'index']);
-Route::get('/create', [BukuController::class, 'create']);
+Route::get('/create-buku', [BukuController::class, 'create']);
 
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index']);
-Route::get('/create', [PenulisController::class, 'create']);
+Route::get('/create-penulis', [PenulisController::class, 'create']);
 
+//Penerbit
+Route::get('/penerbit', [PenerbitController::class, 'index']);
+Route::get('/create-penerbit', [PenerbitController::class, 'create']);
 
+//Kategori
+Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/create-kategori', [KategoriController::class, 'create']);
+
+//Peminjam
+Route::get('/peminjam', [PeminjamController::class, 'index']);
+Route::get('/create-peminjam', [PeminjamController::class, 'create']);
 
 
 

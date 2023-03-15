@@ -23,7 +23,7 @@ class PenerbitController extends Controller
      */
     public function create()
     {
-        //
+        return view('penerbit.create');
     }
 
     /**

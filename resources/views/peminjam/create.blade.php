@@ -5,7 +5,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h2 class="card-title">Tambah Kategori</h2>
+        <h2 class="card-title">Tambah Peminjam</h2>
     </div>
     
     <div class="card-body">
