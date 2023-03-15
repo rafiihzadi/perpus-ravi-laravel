@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="" class="btn btn-primary btn-flat">
+            <a href="{{url('create-peminjam')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">

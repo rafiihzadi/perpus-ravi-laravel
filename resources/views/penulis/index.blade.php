@@ -4,7 +4,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h2 class="card-title">Data Buku</h2>
+        <h2 class="card-title">Data Penulis</h2>
     </div>
 
     <div class="row" style="margin-top: 1rem;">
@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="" class="btn btn-primary btn-flat">
+            <a href="{{url('create-penulis')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
@@ -36,25 +36,23 @@
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
                 <tr>
-                    <th style="text-align:center;">No</th>
-                    <th style="text-align:center;">Judul Buku</th>
-                    <th style="text-align:center;">Tahun Terbit</th>
-                    <th style="text-align:center;">Penulis</th>
-                    <th style="text-align:center;">Penerbit</th>
-                    <th style="text-align:center">Kategori</th>
-                    <th width="200px" style="text-align: center;">Sinopsis</th>
-                    <th style="text-align:center;">Sampul</th>
-                    <th width="250px" style="text-align: center;">Action</th>
+                    <th style="text-align:center;">no</th>
+                    <th style="text-align:center;">nama</th>
+                    <th style="text-align:center;">alamat</th>
+                    <th style="text-align:center;">no telephon</th>
+                    <th style="text-align:center;">email</th>
+                    <th style="text-align:center;">jumlah buku</th>
+                    <th style="text-align:center">opsi</th>
+                    
                 </tr>
                 
                 <tr>
-                    <td style="text-align:center">1</td>
-                    <td style="text-align:center">orang jempol</td>
-                    <td style="text-align:center" style="text-align:center">kota bandung</td>
-                    <td style="text-align:center">08***</td>
-                    <td style="text-align:center">@gmail.com</td>
-                    <td style="text-align:center">WIBU</td>
-                    <td style="text-align:center">!@#$%</td>
+                    <td style="text-align:center"></td>
+                    <td style="text-align:center"></td>
+                    <td style="text-align:center"></td>
+                    <td style="text-align:center" style="text-align:center"></td>
+                    <td style="text-align:center"></td>
+                    <td style="text-align:center"></td>
                 <td style="text-align:center">
                 <form action=>
                     <a class="btn btn-info" href="">Show</a>

@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="" class="btn btn-primary btn-flat">
+            <a href="{{url('create-kategori') }}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
@@ -36,6 +36,7 @@
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
                 <tr>
+                    <th style="text-align:center;">no</th>
                     <th style="text-align:center;">nama</th>
                     <th style="text-align:center;">alamat</th>
                     <th style="text-align:center;">telphon</th>
