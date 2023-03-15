@@ -54,16 +54,10 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/buku', [BukuController::class, 'index']);
 Route::get('/create', [BukuController::class, 'create']);
 
+//Penulis
+Route::get('/penulis', [PenulisController::class, 'index']);
 Route::get('/create', [PenulisController::class, 'create']);
 
-Route::get('/penerbit', [PenerbitController::class, 'index']);
-Route::get('/create', [PenerbitController::class, 'create']);
-
-Route::get('/kategori', [KategoriController::class, 'index']);
-Route::get('/create', [KategoriController::class, 'create']);
-
-Route::get('/peminjam', [PeminjamController::class, 'index']);
-Route::get('/create', [PeminjamController::class, 'create']);
 
 
 
