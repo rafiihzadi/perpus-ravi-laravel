@@ -35,7 +35,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('authors.index') }}" class="nav-link">
+            <a href="{{ url ('/penulis') }}" class="nav-link">
               <i class="fa fa-pencil-alt"></i>
               <p>
                 Penulis

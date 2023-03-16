@@ -35,23 +35,15 @@
         </div>
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
-                <tr>
-                    <th style="text-align:center;">no</th>
+                <th style="text-align:center;">no</th>
                     <th style="text-align:center;">nama</th>
-                    <th style="text-align:center;">alamat</th>
-                    <th style="text-align:center;">telphon</th>
-                    <th style="text-align:center;">email</th>
-                    <th style="text-align:center;">Penerbit</th>
                     <th style="text-align:center">opsi</th>
                 </tr>
                 
                 <tr>
                     <td style="text-align:center">1</td>
                     <td style="text-align:center">orang jempol</td>
-                    <td style="text-align:center" style="text-align:center">kota bandung</td>
-                    <td style="text-align:center">08***</td>
-                    <td style="text-align:center">@gmail.com</td>
-                    <td style="text-align:center">WIBU</td>
+                   
                 <td style="text-align:center">
                 <form action=>
                     <a class="btn btn-info" href="">Show</a>
