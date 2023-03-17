@@ -15,25 +15,37 @@
        <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
-                  <strong>Nama Penulis</strong>
+                  <strong>no</strong>
                   <input type="text" name="nama" class="form-control" placeholder="" autofocus>
               </div>
-          </div>
+            </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>nama Buku</strong>
+                  <input type="text" name="nama" class="form-control" placeholder="" autofocus>
+              </div>
+            </div>
+              <div class="col-xs-12 col-sm-12 col-md-12">
+              <div class="form-group">
+                  <strong>nama anggota</strong>
+                  <input type="text" name="nama" class="form-control" placeholder="" autofocus>
+              </div>
+             </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
-                  <strong>Alamat</strong>
+                  <strong>tanggal pinjam</strong>
                   <textarea class="form-control" style="height:150px" name="sinopsis" placeholder=""></textarea>
               </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
-                    <strong>No. Telepon</strong>
+                    <strong>tanggal kembali</strong>
                     <input type="text" name="nama" class="form-control" placeholder="" autofocus>
                 </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
-                    <strong>Email</strong>
+                    <strong>denda</strong>
                     <input type="text" name="nama" class="form-control" placeholder="" autofocus>
                 </div>
           </div>

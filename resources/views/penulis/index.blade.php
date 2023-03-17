@@ -36,39 +36,39 @@
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
                 <tr>
-                    <th style="text-align:center;">No</th>
+                    <th style="text-align:center;">no</th>
                     <th style="text-align:center;">Nama</th>
                     <th style="text-align:center;">Alamat</th>
-                    <th style="text-align:center;">No.Telepon</th>
+                    <th style="text-align:center;">No Telepon</th>
                     <th style="text-align:center;">Email</th>
-                    <th style="text-align:center;">Jumlah Buku</th>
+                    <th style="text-align:center;">jumlah Buku</th>
                     <th style="text-align:center">Opsi</th>
                     
                 </tr>
-                
+                @foreach($penulis as $data)
                 <tr>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center" style="text-align:center"></td>
-                    <td style="text-align:center"></td>
+                    <td style="text-align:center">{{ $data->iteration }}</td>
+                    <td style="text-align:center">{{ $data->nama }}</td>
+                    <td style="text-align:center">{{ $data->alamat }}</td>
+                    <td style="text-align:center" style="text-align:center"> {{$data->telepon}} </td>
+                    <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
                 <td style="text-align:center">
-                <form action=>
-                    <a class="btn btn-info" href="">Show</a>
-          
-                    <a class="btn btn-primary" href="">Edit</a>
-         
-                        @csrf
-                        @method('DELETE')
-            
-                        <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
-                </form>
+                    <a class="btn btn-info">Show</a>
+                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-danger">Delete</a>
+                    
                 </td>
+
+                
+                </td>
+            
+                @endforeach
                 </tr>
 
 
             </table>
+
         </div>
     </div>
 </div>

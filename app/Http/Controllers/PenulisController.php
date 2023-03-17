@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Penulis;
 
 class PenulisController extends Controller
 {
@@ -13,7 +14,8 @@ class PenulisController extends Controller
      */
     public function index()
     {
-        return view('penulis.index');
+        $penulis = Penulis::all();
+        return view('penulis.index',['penulis'=>$penulis]);
     }
 
     /**
@@ -34,7 +36,12 @@ class PenulisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $penulis = new Penulis;
+        $penulis->nama = $request->nama;
+        $penulis->alamat = $request->alamat;
+        $penulis->telepon = $request->telepon;
+        $penulis->email = $request->email;
+        $penulis->save();
     }
 
     /**

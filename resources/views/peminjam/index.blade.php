@@ -36,7 +36,7 @@
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
                 <tr>
-                    <th style="text-align:center;">no</th>
+                    <th style="text-align:center;">No</th>
                     <th style="text-align:center;">nama buku</th>
                     <th style="text-align:center;">nama anggota</th>
                     <th style="text-align:center;">tanggal pinjam</th>
