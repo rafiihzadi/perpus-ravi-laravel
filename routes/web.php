@@ -8,9 +8,7 @@ use App\Http\Controllers\PenulisController;
 use App\Http\Controllers\PenerbitController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamController;
-
-
-
+use App\Models\Penulis;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +53,9 @@ Route::get('/buku', [BukuController::class, 'index']);
 Route::get('/create-buku', [BukuController::class, 'create']);
 
 //Penulis
-Route::get('/penulis', [PenulisController::class, 'index']);
+Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::get('/create-penulis', [PenulisController::class, 'create']);
+Route::post('/store', [PenulisController::class, 'store'])->name('penulis.store');
 
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index']);

@@ -45,30 +45,27 @@
                     <th style="text-align:center">Opsi</th>
                     
                 </tr>
-                
+                @foreach($penulis as $data)
                 <tr>
+                    <td style="text-align:center">{{ $data->iteration }}</td>
+                    <td style="text-align:center">{{ $data->nama }}</td>
+                    <td style="text-align:center">{{ $data->alamat }}</td>
+                    <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>
+                    <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center" style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                <td style="text-align:center">
-                <form action=>
-                    <a class="btn btn-info" href="">Show</a>
-          
-                    <a class="btn btn-primary" href="">Edit</a>
-         
-                        @csrf
-                        @method('DELETE')
-            
-                        <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
-                </form>
-                </td>
+                    <td style="text-align:center">
+                        <a class="btn btn-info">Show</a>
+                        <a class="btn btn-primary">Edit</a>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+
                 </tr>
-
-
+                
+                @endforeach
+                </tr>
+                
             </table>
+            
         </div>
     </div>
 </div>
