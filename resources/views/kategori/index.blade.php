@@ -35,29 +35,22 @@
         </div>
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
-                <th style="text-align:center;">no</th>
-                    <th style="text-align:center;">nama</th>
+                    <th style="text-align:center">nama</th>
                     <th style="text-align:center">opsi</th>
                 </tr>
-                
+                @foreach($kategori as $data)
                 <tr>
-                    <td style="text-align:center">1</td>
-                    <td style="text-align:center">orang jempol</td>
-                   
                 <td style="text-align:center">
-                <form action=>
-                    <a class="btn btn-info" href="">Show</a>
-          
-                    <a class="btn btn-primary" href="">Edit</a>
-         
-                        @csrf
-                        @method('DELETE')
-            
-                        <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
-                </form>
+                    <a class="btn btn-info">Show</a>
+                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-primary">Delete</a>
+        
                 </td>
-                </tr>
+                
+            </tr>
 
+            @endforeach
+        </tr>
 
             </table>
         </div>

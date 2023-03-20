@@ -45,7 +45,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('publishers.index') }}" class="nav-link">
+            <a href="{{ url('publishers.index') }}" class="nav-link">
               <i class="fa fa-building"></i>
               <p>
                   Penerbit
@@ -55,7 +55,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ route('kategori.index') }}" class="nav-link">
+            <a href="{{ url('kategori.index') }}" class="nav-link">
               <i class="ion ion-pie-graph"></i>
               <p>
                 Kategori
@@ -64,7 +64,7 @@
           </li>
             
           <li class="nav-item">
-            <a href="{{ route('peminjaman.index') }}" class="nav-link">
+            <a href="{{ url('peminjam.index') }}" class="nav-link">
               <i class="fa-solid fa-bookmark"></i>
               <p>
                 Peminjam

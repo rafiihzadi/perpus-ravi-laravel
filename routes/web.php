@@ -9,6 +9,8 @@ use App\Http\Controllers\PenerbitController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamController;
 use App\Models\Penulis;
+use App\Models\Penerbit;
+use App\Models\Kategori;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,10 +62,14 @@ Route::post('/store', [PenulisController::class, 'store'])->name('penulis.store'
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index']);
 Route::get('/create-penerbit', [PenerbitController::class, 'create']);
+Route::post('/store', [PenerbitController::class, 'store'])->name('penerbit.store');
+
 
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/create-kategori', [KategoriController::class, 'create']);
+Route::post('/store', [KategoriController::class, 'store'])->name('kategori.store');
+
 
 //Peminjam
 Route::get('/peminjam', [PeminjamController::class, 'index']);

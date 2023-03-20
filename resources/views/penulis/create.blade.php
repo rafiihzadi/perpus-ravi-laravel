@@ -22,7 +22,7 @@
 
     <form action="{{ url('/store') }}" method="post" enctype="multipart/form-data">
 
-    <form action="{{ route('penulis.store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('penulis.store') }}" method="post" enctype="multipart/form-data">
 
 
         @csrf

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Penerbit;
 
 class PenerbitController extends Controller
 {
@@ -13,7 +14,11 @@ class PenerbitController extends Controller
      */
     public function index()
     {
-        return view('penerbit.index');
+        $penerbit = Penerbit::all();
+
+        return view('penerbit.index',['penerbit'=>$penerbit]);
+
+
     }
 
     /**
@@ -34,7 +39,16 @@ class PenerbitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $penerbit = new Penerbit;
+        $penerbit->nama = $request->nama;
+        $penerbit->alamat = $request->alamat;
+        $penerbit->telepon = $request->telepon;
+        $penerbit->email = $request->email;
+        $penerbit->save();
+
+        
+        return redirect()->route('penerbit.index');
     }
 
     /**
