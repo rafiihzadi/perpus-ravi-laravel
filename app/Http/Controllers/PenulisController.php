@@ -15,11 +15,11 @@ class PenulisController extends Controller
     public function index()
     {
         $penulis = Penulis::all();
-<<<<<<< HEAD
+
         return view('penulis.index',['penulis'=>$penulis]);
-=======
+
         return view('penulis.index', ['penulis'=>$penulis]);
->>>>>>> 8be8c92f536db8bc54ea7a71883cab4de6ba1277
+
     }
 
     /**
@@ -40,21 +40,16 @@ class PenulisController extends Controller
      */
     public function store(Request $request)
     {
-<<<<<<< HEAD
-=======
 
->>>>>>> 8be8c92f536db8bc54ea7a71883cab4de6ba1277
         $penulis = new Penulis;
         $penulis->nama = $request->nama;
         $penulis->alamat = $request->alamat;
         $penulis->telepon = $request->telepon;
         $penulis->email = $request->email;
         $penulis->save();
-<<<<<<< HEAD
-=======
+
         
         return redirect()->route('penulis.index');
->>>>>>> 8be8c92f536db8bc54ea7a71883cab4de6ba1277
     }
 
     /**

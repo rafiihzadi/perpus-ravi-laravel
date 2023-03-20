@@ -20,7 +20,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-g
+
     <div class="card-body">
         <div style="margin-bottom: 20px">
             <a href="{{url( 'create-penulis')}}" class="btn btn-primary btn-flat">
@@ -36,12 +36,12 @@ g
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
                 <tr>
-                    <th style="text-align:center;">no</th>
+                    <th style="text-align:center;">No</th>
                     <th style="text-align:center;">Nama</th>
                     <th style="text-align:center;">Alamat</th>
-                    <th style="text-align:center;">No Telepon</th>
+                    <th style="text-align:center;">No.Telepon</th>
                     <th style="text-align:center;">Email</th>
-                    <th style="text-align:center;">jumlah Buku</th>
+                    <th style="text-align:center;">Jumlah Buku</th>
                     <th style="text-align:center">Opsi</th>
                     
                 </tr>
@@ -50,22 +50,6 @@ g
                     <td style="text-align:center">{{ $data->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->alamat }}</td>
-
-                    <td style="text-align:center" style="text-align:center"> {{$data->telepon}} </td>
-                    <td style="text-align:center">{{ $data->email }}</td>
-                    <td style="text-align:center"></td>
-                <td style="text-align:center">
-                    <a class="btn btn-info">Show</a>
-                    <a class="btn btn-primary">Edit</a>
-                    <a class="btn btn-danger">Delete</a>
-                    
-                </td>
-
-                
-                </td>
-            
-                @endforeach
-
                     <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>
                     <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
@@ -81,7 +65,6 @@ g
                 </tr>
                 
             </table>
-
             
         </div>
     </div>
