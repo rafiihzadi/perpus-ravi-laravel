@@ -20,7 +20,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif
-
+g
     <div class="card-body">
         <div style="margin-bottom: 20px">
             <a href="{{url( 'create-penulis')}}" class="btn btn-primary btn-flat">
@@ -50,6 +50,7 @@
                     <td style="text-align:center">{{ $data->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->alamat }}</td>
+
                     <td style="text-align:center" style="text-align:center"> {{$data->telepon}} </td>
                     <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
@@ -64,11 +65,24 @@
                 </td>
             
                 @endforeach
+
+                    <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>
+                    <td style="text-align:center">{{ $data->email }}</td>
+                    <td style="text-align:center"></td>
+                    <td style="text-align:center">
+                        <a class="btn btn-info">Show</a>
+                        <a class="btn btn-primary">Edit</a>
+                        <a class="btn btn-danger">Delete</a>
+                    </td>
+
                 </tr>
-
-
+                
+                @endforeach
+                </tr>
+                
             </table>
 
+            
         </div>
     </div>
 </div>
