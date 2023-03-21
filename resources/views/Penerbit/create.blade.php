@@ -22,8 +22,6 @@
 
     <form action="{{ url('/store') }}" method="post" enctype="multipart/form-data">
 
-    <form action="{{ url('penerbit.store') }}" method="post" enctype="multipart/form-data">
-
 
         @csrf
 
@@ -59,7 +57,6 @@
               <button type="submit" class="btn btn-primary">Simpan</button>
 
               <a href="{{ url('/index') }}" class="btn btn-warning">Kembali</a>
-              <a href="{{ route('penerbit.index') }}" class="btn btn-warning">Kembali</a>
           </div>
 
 </form>
