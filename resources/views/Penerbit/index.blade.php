@@ -39,7 +39,7 @@
                     <th style="text-align:center;">No</th>
                     <th style="text-align:center;">Nama</th>
                     <th style="text-align:center;">Alamat</th>
-                    <th style="text-align:center;">No.Telepon</th>
+                    <th style="text-align:center;">Telepon</th>
                     <th style="text-align:center;">Email</th>
                     <th style="text-align:center;">Jumlah Buku</th>
                     <th style="text-align:center">Opsi</th>

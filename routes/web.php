@@ -60,13 +60,13 @@ Route::get('/create-penulis', [PenulisController::class, 'create']);
 Route::post('/store', [PenulisController::class, 'store'])->name('penulis.store');
 
 //Penerbit
-Route::get('/penerbit', [PenerbitController::class, 'index']);
+Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
 Route::get('/create-penerbit', [PenerbitController::class, 'create']);
 Route::post('/store', [PenerbitController::class, 'store'])->name('penerbit.store');
 
 
 //Kategori
-Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
 Route::get('/create-kategori', [KategoriController::class, 'create']);
 Route::post('/store', [KategoriController::class, 'store'])->name('kategori.store');
 
