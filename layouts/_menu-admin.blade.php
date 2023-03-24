@@ -45,7 +45,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ url('/penerbit') }}" class="nav-link">
+            <a href="{{ url ('/penerbit') }}" class="nav-link">
               <i class="fa fa-building"></i>
               <p>
                   Penerbit
@@ -55,7 +55,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="{{ url('/kategori') }}" class="nav-link">
+            <a href="{{ url ('/kategori') }}" class="nav-link">
               <i class="ion ion-pie-graph"></i>
               <p>
                 Kategori

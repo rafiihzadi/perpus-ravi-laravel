@@ -7,9 +7,21 @@
     <div class="card-header">
         <h2 class="card-title">Tambah Buku</h2>
     </div>
+
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> There were some problems with your input.<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
     
     <div class="card-body">
-      <form action="#" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/store') }}" method="post" enctype="multipart/form-data">
+
         @csrf
 
        <div class="row">
@@ -37,15 +49,15 @@
                     <input type="text" name="nama" class="form-control" placeholder="" autofocus>
                 </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-12">
-              <button type="submit" class="btn btn-primary">Simpan</button>
-              <a href="{{ url('buku') }}" class="btn btn-warning">Kembali</a>
           </div>
         </div>
-      </form>
-    </div>
-  </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+              <button type="submit" class="btn btn-primary">Simpan</button>
+
+              <a href="{{ url('/index') }}" class="btn btn-warning">Kembali</a>
+
+          </div>
+
+</form>
 </div>
-
-
 @endsection

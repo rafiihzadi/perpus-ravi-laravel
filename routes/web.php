@@ -8,6 +8,7 @@ use App\Http\Controllers\PenulisController;
 use App\Http\Controllers\PenerbitController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamController;
+use App\Models\Buku;
 use App\Models\Penulis;
 use App\Models\Penerbit;
 use App\Models\Kategori;
@@ -51,8 +52,10 @@ Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/dashboard', [DashboardController::class, 'index']);
 
 //Buku
-Route::get('/buku', [BukuController::class, 'index']);
+Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
 Route::get('/create-buku', [BukuController::class, 'create']);
+Route::post('/store', [BukuController::class, 'store'])->name('buku.store');
+
 
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');

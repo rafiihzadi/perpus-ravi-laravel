@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Buku;
 
 class BukuController extends Controller
 {
@@ -13,7 +14,11 @@ class BukuController extends Controller
      */
     public function index()
     {
-        return view('buku.index');
+        $buku = Buku::all();
+
+        return view('buku.index',['buku'=>$buku]);
+
+
     }
 
     /**
@@ -34,7 +39,20 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $buku = new Buku;
+        $buku->id = $request->nama;
+        $buku->nama = $request->nama;
+        $buku->id_penerbit = $request->id_penerbit;
+        $buku->id_kategori = $request->id_kategori;
+        $buku->sampul = $request->sampul;
+        $buku->created_at = $request->created_at;
+        $buku->updated_at = $request->updated_at;
+        $buku->deleted_at = $request->delete_at;
+        $buku->save();
+
+        
+        return redirect()->route('buku.index');
     }
 
     /**

@@ -23,6 +23,7 @@
     <form action="{{ url('/store') }}" method="post" enctype="multipart/form-data">
 
 
+
         @csrf
 
      <div class="row">
@@ -57,6 +58,7 @@
               <button type="submit" class="btn btn-primary">Simpan</button>
 
               <a href="{{ url('/index') }}" class="btn btn-warning">Kembali</a>
+
           </div>
 
 </form>

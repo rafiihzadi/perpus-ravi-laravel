@@ -18,8 +18,7 @@ class PenulisController extends Controller
 
         return view('penulis.index',['penulis'=>$penulis]);
 
-        return view('penulis.index', ['penulis'=>$penulis]);
-
+        return view('penulis.index',['penulis'=>$penulis]);
     }
 
     /**

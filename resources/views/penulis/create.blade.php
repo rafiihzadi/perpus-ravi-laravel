@@ -20,7 +20,7 @@
     
     <div class="card-body">
 
-    <form action="{{ route('penulis.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ url('/store') }}" method="post" enctype="multipart/form-data">
 
         @csrf
 
@@ -52,7 +52,8 @@
 
         <div class="col-xs-12 col-sm-12 col-md-12">
             <button type="submit" class="btn btn-primary">Simpan</button>
-            <a href="{{ route('penulis.index') }}" class="btn btn-warning">Kembali</a>
+
+            <a href="{{ url('/index') }}" class="btn btn-warning">Kembali</a>
         </div>
     </form>
 </div>
