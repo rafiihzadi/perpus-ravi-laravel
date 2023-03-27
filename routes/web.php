@@ -54,7 +54,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 //Buku
 Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
 Route::get('/create-buku', [BukuController::class, 'create']);
-Route::post('/store', [BukuController::class, 'store'])->name('buku.store');
+Route::post('/update', [BukuController::class, 'store'])->name('buku.store');
 
 
 //Penulis
