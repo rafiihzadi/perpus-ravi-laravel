@@ -9,7 +9,7 @@
     </div>
     
     <div class="card-body">
-      <form action="#" method="post" enctype="multipart/form-data">
+      <form action="{{url('/update')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
        <div class="row">
@@ -28,34 +28,20 @@
           <div class="col-xs-12 col-sm-6 col-md-12">
               <div class="form-group">
                   <strong>Penulis:</strong>
-              </div>
-              <div class="form-group" style="height: auto;">
-              <select class="js-example-basic-single" style="width: 100%;" name="id_penulis" id="id_penulis">
-             
-          </select>
-          </div>
+                  <input type="text" name="tahun_terbit" class="form-control" placeholder="">
+                </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Penerbit:</strong>
-              </div>
-              <div class="form-group">
-              <select class="js-example-basic-single" style="width: 100%;" name="id_penerbit" id="id_penerbit">
-              <option disabled value>Pilih Penerbit</option>
-              
-          </select>
-          </div>
+                  <input type="text" name="tahun_terbit" class="form-control" placeholder="">
+                 </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Kategori:</strong>
-              </div>
-          <div class="form-group">
-              <select class="js-example-basic-single" style="width: 100%;" name="id_kategori" id="id_kategori">
-              <option disabled value>Pilih Kategori</option>
-              
-          </select>
-          </div>
+                  <input type="text" name="tahun_terbit" class="form-control" placeholder="">
+                </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="form-group">
@@ -71,7 +57,7 @@
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <button type="submit" class="btn btn-primary">Simpan</button>
-              <a href="#" class="btn btn-warning">Kembali</a>
+              <a href="{{url('/index')}}" class="btn btn-warning">Kembali</a>
           </div>
         </div>
       </form>
