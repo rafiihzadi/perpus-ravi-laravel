@@ -20,7 +20,7 @@
     
     <div class="card-body">
 
-    <form action="{{ url('/store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/update') }}" method="post" enctype="multipart/form-data">
 
         @csrf
 

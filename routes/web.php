@@ -60,7 +60,7 @@ Route::post('/store', [BukuController::class, 'store'])->name('buku.store');
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::get('/create-penulis', [PenulisController::class, 'create']);
-Route::post('/store', [PenulisController::class, 'store'])->name('penulis.store');
+Route::post('/update', [PenulisController::class, 'store'])->name('penulis.store');
 
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');

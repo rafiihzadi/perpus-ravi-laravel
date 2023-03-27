@@ -17,8 +17,6 @@ class KategoriController extends Controller
         $kategori = Kategori::all();
 
         return view('kategori.index',['kategori'=>$kategori]);
-
-
     }
 
     /**
@@ -37,7 +35,7 @@ class KategoriController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function update(Request $request)
     {
 
         $kategori = new Kategori;
@@ -77,7 +75,7 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function updatse(Request $request, $id)
     {
         //
     }

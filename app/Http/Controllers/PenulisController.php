@@ -17,8 +17,6 @@ class PenulisController extends Controller
         $penulis = Penulis::all();
 
         return view('penulis.index',['penulis'=>$penulis]);
-
-        return view('penulis.index',['penulis'=>$penulis]);
     }
 
     /**
@@ -41,6 +39,7 @@ class PenulisController extends Controller
     {
 
         $penulis = new Penulis;
+        
         $penulis->nama = $request->nama;
         $penulis->alamat = $request->alamat;
         $penulis->telepon = $request->telepon;
