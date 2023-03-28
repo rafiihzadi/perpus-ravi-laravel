@@ -48,15 +48,14 @@
                 </tr>
                 @foreach($buku as $data)
                 <tr>
-                    <td style="text-align:center"></td>
+                    <td style="text-align:center">{{ $data->id }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->tahun_terbit }}</td>
                     <td style="text-align:center" style="text-align:center">{{ $data->id_penulis }}</td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
+                    <td style="text-align:center">{{ $data->id_penerbit }}</td>
+                    <td style="text-align:center">{{$data->id_kategori}}</td>
+                    <td style="text-align:center">{{$data->sinopsis}}</td>
+                    <td style="text-align:center">{{$data->sampul}}</td>
                 <td style="text-align:center">
                 <form action=>
          
@@ -77,4 +76,3 @@
     </div>
 </div>
 @endsection
-
