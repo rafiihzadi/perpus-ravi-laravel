@@ -59,7 +59,7 @@
                 <td style="text-align:center">
                 <form action=>
          
-                    <a class="btn btn-info" href="">Show</a>
+                    <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
           
                     <a class="btn btn-primary" href="">Edit</a>
          
