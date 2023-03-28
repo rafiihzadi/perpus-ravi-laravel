@@ -78,6 +78,3 @@ Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kate
 //Peminjam
 Route::get('/peminjam', [PeminjamController::class, 'index']);
 Route::get('/create-peminjam', [PeminjamController::class, 'create']);
-
-
-

@@ -58,7 +58,8 @@ class PenulisController extends Controller
      */
     public function show($id)
     {
-        //
+        $penulis = Penulis::findOrFail($id);
+        return view('penulis.show', ['penulis' => $penulis]);
     }
 
     /**
