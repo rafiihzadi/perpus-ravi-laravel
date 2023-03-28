@@ -47,7 +47,7 @@
                 </tr>
                 @foreach($penerbit as $data)
                 <tr>
-                    <td style="text-align:center">{{ $data->iteration }}</td>
+                    <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->alamat }}</td>
                     <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>

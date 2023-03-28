@@ -17,8 +17,6 @@ class BukuController extends Controller
         $buku = Buku::all();
 
         return view('buku.index',['buku'=>$buku]);
-
-
     }
 
     /**
@@ -41,17 +39,14 @@ class BukuController extends Controller
     {
 
         $buku = new Buku;
-        $buku->id = $request->nama;
         $buku->nama = $request->nama;
+        $buku->tahun_terbit = $request->tahun_terbit;
+        $buku->id_penulis = $request->id_penulis;
         $buku->id_penerbit = $request->id_penerbit;
         $buku->id_kategori = $request->id_kategori;
         $buku->sinopsis = $request->sinopsis;
         $buku->sampul = $request->sampul;
-        $buku->created_at = $request->created_at;
-        $buku->updated_at = $request->updated_at;
-        $buku->deleted_at = $request->delete_at;
         $buku->save();
-
         
         return redirect()->route('buku.index');
     }

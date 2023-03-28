@@ -46,11 +46,12 @@
                     <th style="text-align:center;">Sampul</th>
                     <th width="250px" style="text-align: center;">Action</th>
                 </tr>
-                
+                @foreach($buku as $data)
                 <tr>
                     <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center" style="text-align:center"></td>
+                    <td style="text-align:center">{{ $data->nama }}</td>
+                    <td style="text-align:center">{{ $data->tahun_terbit }}</td>
+                    <td style="text-align:center" style="text-align:center">{{ $data->id_penulis }}</td>
                     <td style="text-align:center"></td>
                     <td style="text-align:center"></td>
                     <td style="text-align:center"></td>
@@ -70,8 +71,7 @@
                 </form>
                 </td>
                 </tr>
-
-
+                @endforeach
             </table>
         </div>
     </div>

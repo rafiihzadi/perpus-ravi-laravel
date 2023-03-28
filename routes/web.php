@@ -54,7 +54,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 //Buku
 Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
 Route::get('/create-buku', [BukuController::class, 'create']);
-Route::post('/update', [BukuController::class, 'store'])->name('buku.store');
+Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
 
 
 //Penulis
@@ -65,13 +65,13 @@ Route::post('/update', [PenulisController::class, 'store'])->name('penulis.store
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
 Route::get('/create-penerbit', [PenerbitController::class, 'create']);
-Route::post('/store', [PenerbitController::class, 'store'])->name('penerbit.store');
+Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
 
 
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
 Route::get('/create-kategori', [KategoriController::class, 'create']);
-Route::post('/store', [KategoriController::class, 'store'])->name('kategori.store');
+Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 
 
 //Peminjam

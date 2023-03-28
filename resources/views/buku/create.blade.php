@@ -9,7 +9,7 @@
     </div>
     
     <div class="card-body">
-      <form action="{{url('/update')}}" method="POST" enctype="multipart/form-data">
+      <form action="{{url('/store-buku')}}" method="POST" enctype="multipart/form-data">
         @csrf
 
        <div class="row">
@@ -28,19 +28,19 @@
           <div class="col-xs-12 col-sm-6 col-md-12">
               <div class="form-group">
                   <strong>Penulis:</strong>
-                  <input type="text" name="tahun_terbit" class="form-control" placeholder="">
+                  <input type="text" name="id_penulis" class="form-control" placeholder="">
                 </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Penerbit:</strong>
-                  <input type="text" name="tahun_terbit" class="form-control" placeholder="">
+                  <input type="text" name="id_penerbit" class="form-control" placeholder="">
                  </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Kategori:</strong>
-                  <input type="text" name="tahun_terbit" class="form-control" placeholder="">
+                  <input type="text" name="id_kategori" class="form-control" placeholder="">
                 </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">

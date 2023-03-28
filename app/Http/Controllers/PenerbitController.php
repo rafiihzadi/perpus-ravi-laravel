@@ -17,8 +17,6 @@ class PenerbitController extends Controller
         $penerbit = Penerbit::all();
 
         return view('penerbit.index',['penerbit'=>$penerbit]);
-
-
     }
 
     /**
