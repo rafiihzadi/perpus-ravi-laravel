@@ -55,8 +55,8 @@
                     <td style="text-align:center"></td>
                     <td style="text-align:center">
 
-                    <a class="btn btn-info" href="{{ route('show',$data->id) }}">Show</a>
-                        <a class="">Edit</a>
+                    <a class="btn btn-info" href="{{ url('/penulis.show',$data->id) }}">Show</a>
+                    <a class="btn btn-primary">Edit</a>
                         <a class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
