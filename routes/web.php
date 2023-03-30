@@ -65,7 +65,7 @@ Route::post('/update', [PenulisController::class, 'store'])->name('penulis.store
 
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
-Route::get('/create-penerbit', [PenerbitController::class, 'create']);
+Route::get('/show-penerbit/{id}', [PenerbitController::class, 'show'])->name('penerbit.show');
 Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
 
 

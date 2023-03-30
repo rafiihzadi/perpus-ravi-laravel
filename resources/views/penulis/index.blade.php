@@ -54,9 +54,8 @@
                     <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
                     <td style="text-align:center">
-
                     <a class="btn btn-info" href="{{ route('penulis.show',$data->id) }}">Show</a>
-                    <a class="btn btn-primary">Edit</a>
+                        <a class="btn btn-primary">Edit</a>
                         <a class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

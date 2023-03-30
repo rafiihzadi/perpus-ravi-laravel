@@ -14,19 +14,19 @@
             </tr>
             <tr>
                 <th style="width: 180px">Alamat</th>
-                <td></td>
+                <td>{{ $penulis->alamat }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">No.Telepon</th>
-                <td></td>
+                <td>{{ $penulis->telepon }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Email</th>
-                <td></td>
+                <td>{{ $penulis->email }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Jumlah Buku</th>
-                <td></td>
+                <td>{{ $penulis->jumlah }}</td>
             </tr>
         </table>
         <footer class="mt-3">

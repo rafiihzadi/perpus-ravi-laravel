@@ -10,31 +10,31 @@
         <table class="table table-bordered">
             <tr>
                 <th style="width: 180px">Nama</th>
-                <td>{{ $buku->nama }}</td>
+                <td>{{ $penerbit->nama }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Tahun Terbit</th>
-                <td></td>
+                <td>{{ $penerbit->tahun terbit }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Penulis</th>
-                <td></td>
+                <td>{{ $penerbit->penulis }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Penerbit</th>
-                <td></td>
+                <td>{{ $penerbit->penerbit }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Kategori</th>
-                <td></td>
+                <td>{{ $penerbit->kategori }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Sinopsis</th>
-                <td></td>
+                <td>{{ $penerbit->sinopsis }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Sampul</th>
-                <td></td>
+                <td>{{ $penerbit->sampul }}</td>
             </tr>
         </table>
         <footer class="mt-3">
