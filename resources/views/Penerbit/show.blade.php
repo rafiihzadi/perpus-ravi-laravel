@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <th style="width: 180px">Tahun Terbit</th>
-                <td>{{ $penerbit->tahun terbit }}</td>
+                <td>{{ $penerbit->tahun_terbit }}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Penulis</th>

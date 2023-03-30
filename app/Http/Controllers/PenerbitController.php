@@ -58,6 +58,7 @@ class PenerbitController extends Controller
     public function show($id)
     {
         $penerbit = Penerbit::findOrFail($id);
+        
         return view('penerbit.show', ['penerbit' => $penerbit]);
     }
 
