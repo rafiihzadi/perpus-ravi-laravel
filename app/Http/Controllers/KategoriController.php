@@ -54,7 +54,9 @@ class KategoriController extends Controller
      */
     public function show($id)
     {
-        //
+        $kategori = Kategori::findOrFail($id);
+
+        return view('kategori.show',['kategori' => $kategori]);
     }
 
     /**

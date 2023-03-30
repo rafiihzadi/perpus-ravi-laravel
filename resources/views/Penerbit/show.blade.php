@@ -13,28 +13,21 @@
                 <td>{{ $penerbit->nama }}</td>
             </tr>
             <tr>
-                <th style="width: 180px">Tahun Terbit</th>
-                <td>{{ $penerbit->tahun_terbit }}</td>
+                <th style="width: 180px">Alamat</th>
+                <td>{{ $penerbit->alamat }}</td>
             </tr>
             <tr>
-                <th style="width: 180px">Penulis</th>
-                <td>{{ $penerbit->penulis }}</td>
+            <th style="width: 180px">No.Telepon</th>
+                <td>{{ $penerbit->telepon }}</td>            
             </tr>
             <tr>
-                <th style="width: 180px">Penerbit</th>
-                <td>{{ $penerbit->penerbit }}</td>
+                <th style="width: 180px">Email</th>
+                <td>{{ $penerbit->email }}</td>
             </tr>
             <tr>
-                <th style="width: 180px">Kategori</th>
-                <td>{{ $penerbit->kategori }}</td>
-            </tr>
-            <tr>
-                <th style="width: 180px">Sinopsis</th>
-                <td>{{ $penerbit->sinopsis }}</td>
-            </tr>
-            <tr>
-                <th style="width: 180px">Sampul</th>
-                <td>{{ $penerbit->sampul }}</td>
+                <th style="width: 180px">Jumlah Buku </th>
+                <td>{{ $penerbit->jumlah  }}</td>
+            
             </tr>
         </table>
         <footer class="mt-3">

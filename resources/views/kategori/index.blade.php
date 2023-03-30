@@ -37,12 +37,14 @@
             <table class="table table-bordered table-condensed">
                 <th style="text-align:center">nama</th>
                 <th style="text-align:center">opsi</th>
+
                 </tr>
                 @foreach($kategori as $data)
                 <tr>
+                    
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">
-                        <a class="btn btn-info">Show</a>
+                    <a class="btn btn-info" href="{{ route('kategori.show',$data->id) }}">Show</a>
                         <a class="btn btn-primary">Edit</a>
                         <a class="btn btn-danger">Delete</a>
 

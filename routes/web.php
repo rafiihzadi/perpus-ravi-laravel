@@ -72,6 +72,7 @@ Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('pene
 
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
+Route::get('/show-kategori/{id}', [KategoriController::class, 'show'])->name('kategori.show');
 Route::get('/create-kategori', [KategoriController::class, 'create']);
 Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 
