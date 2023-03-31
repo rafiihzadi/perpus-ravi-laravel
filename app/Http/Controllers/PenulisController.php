@@ -71,7 +71,8 @@ class PenulisController extends Controller
      */
     public function edit($id)
     {
-        //
+       $penulis = Penulis::find($id);
+        return view('penulis.edit', compact('penulis'));
     }
 
     /**
@@ -83,7 +84,20 @@ class PenulisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+            'email' => 'required',
+        ]);
+
+        $penulis = Penulis::find($id);
+        $penulis->nama = $request->input('nama');
+        $penulis->alamat = $request->input('alamat');
+        $penulis->telepon = $request->input('telepon');
+        $penulis->email = $request->input('email');
+
+        return redirect()->route('penulis.index')->with('success', 'User updated successfully.');
     }
 
     /**
