@@ -71,7 +71,8 @@ class BukuController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buku = Buku::find($id);
+        return view('buku.edit', compact('buku'));
     }
 
     /**
@@ -83,7 +84,29 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'tahun_terbit' => 'required',
+            'id_penulis' => 'required',
+            'id_penerbit' => 'required',
+            'id_kategori' => 'required',
+            'sinopsis' => 'required',
+            'sampul' => 'required',
+        ]);
+
+        $buku = Buku::find($id);
+        $buku->nama = $request->input('nama');
+        $buku->tahun_terbit = $request->input('tahun_terbit');
+        $buku->id_penulis = $request->input('id_penulis');
+        $buku->id_penerbit = $request->input('id_penerbit');
+        $buku->id_kategori = $request->input('id_kategori');
+        $buku->id_sinopsis = $request->input('id_sinopsis');
+        $buku->sampul = $request->input('sampul');
+
+        
+
+
+        return redirect()->route('buku.index')->with('success', 'User updated successfully.');
     }
 
     /**

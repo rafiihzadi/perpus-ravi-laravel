@@ -61,7 +61,7 @@
          
                     <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
           
-                    <a class="btn btn-primary" href="">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
          
                         @csrf
                         @method('DELETE')

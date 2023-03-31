@@ -70,9 +70,9 @@ class PenerbitController extends Controller
      */
     public function edit($id)
     {
-        //
+       $penerbit = Penerbit::find($id);
+        return view('penerbit.edit', compact('penerbit'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -82,8 +82,22 @@ class PenerbitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'telepon' => 'required',
+            'email' => 'required',
+        ]);
+        
+        $penerbit = Penerbit::find($id);
+        $penerbit->nama = $request->input('nama');
+        $penerbit->alamat = $request->input('alamat');
+        $penerbit->telepon = $request->input('telepon');
+        $penerbit->email = $request->input('email');
+
+        return redirect()->route('penerbit.index')->with('success', 'User updated successfully.');   
+     }
 
     /**
      * Remove the specified resource from storage.

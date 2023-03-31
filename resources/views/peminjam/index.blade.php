@@ -46,9 +46,9 @@
                     <th style="text-align:center">opsi</th>
 
                 </tr>
-                
+                @foreach($peminjam as $data)
                 <tr>
-                    <td style="text-align:center">i</td>
+                <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center"></td>
                     <td style="text-align:center" style="text-align:center"></td>
                     <td style="text-align:center"></td>

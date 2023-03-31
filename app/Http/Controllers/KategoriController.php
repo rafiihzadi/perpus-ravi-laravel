@@ -67,7 +67,9 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        return view('kategori.edit', compact('kategori'));
+
     }
 
     /**
@@ -77,9 +79,17 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updatse(Request $request, $id)
+    public function updated(Request $request, $id)
     {
-        //
+        
+        $request->validate([
+            'nama' => 'required',
+        ]);
+        
+        $kategori = Kategori::find($id);
+        $kategori->nama = $request->input('nama');
+
+        return redirect()->route('kategori.index')->with('success', 'User updated successfully.');
     }
 
     /**

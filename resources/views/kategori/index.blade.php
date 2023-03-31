@@ -45,7 +45,7 @@
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">
                     <a class="btn btn-info" href="{{ route('kategori.show',$data->id) }}">Show</a>
-                        <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-primary" href="{{ route('kategori.edit',$data->id) }}">Edit</a>
                         <a class="btn btn-danger">Delete</a>
 
                 </td>
