@@ -39,7 +39,6 @@ class PenulisController extends Controller
     {
 
         $penulis = new Penulis;
-        
         $penulis->nama = $request->nama;
         $penulis->alamat = $request->alamat;
         $penulis->telepon = $request->telepon;

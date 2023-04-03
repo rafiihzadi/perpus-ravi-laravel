@@ -16,7 +16,7 @@ class BukuController extends Controller
     {
         $buku = Buku::all();
 
-        return view('buku.index',['buku'=>$buku]);
+        return view ('buku.index',['buku'=>$buku]);
     }
 
     /**
@@ -84,29 +84,21 @@ class BukuController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama' => 'required',
-            'tahun_terbit' => 'required',
-            'id_penulis' => 'required',
-            'id_penerbit' => 'required',
-            'id_kategori' => 'required',
-            'sinopsis' => 'required',
-            'sampul' => 'required',
+        Buku::find($id)->update([
+            'nama' => $request->nama,
+            'tahun_terbit' => $request->tahun_terbit,
+            'id_penulis' => $request->id_penulis,
+            'id_penerbit' => $request->id_penerbit,
+            'id_kategori' => $request->id_kategori,
+            'sinopsis' => $request->sinopsis,
+            'sampul' => $request->sampul,
         ]);
 
-        $buku = Buku::find($id);
-        $buku->nama = $request->input('nama');
-        $buku->tahun_terbit = $request->input('tahun_terbit');
-        $buku->id_penulis = $request->input('id_penulis');
-        $buku->id_penerbit = $request->input('id_penerbit');
-        $buku->id_kategori = $request->input('id_kategori');
-        $buku->id_sinopsis = $request->input('id_sinopsis');
-        $buku->sampul = $request->input('sampul');
-
+        
         
 
 
-        return redirect()->route('buku.index')->with('success', 'User updated successfully.');
+        return redirect()->route('buku.index')->with('success', 'Data berhasil diubah.');
     }
 
     /**
@@ -117,8 +109,8 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        $penulis = Buku::find($id);
-        $penulis->delete();
+        $buku = Buku::find($id);
+        $buku->delete();
 
         return redirect()->route('buku.index')->with('success', 'Buku berhasil dihapus!');
     }

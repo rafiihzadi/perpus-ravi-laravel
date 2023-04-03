@@ -45,11 +45,11 @@
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">
  
-                    <form action="" method="POST">
+                    <form action="{{ route('kategori.destroy', $data->id) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                             <a class="btn btn-info" href="">Show</a>
-                             <a class="btn btn-primary" href="">Edit</a>
+                             <a class="btn btn-info" href="{{ route('kategori.show',$data->id) }}">Show</a>
+                             <a class="btn btn-primary" href="{{ route('kategori.edit',$data->id) }}">Edit</a>
                             <button type="submit" class="btn btn-danger">Hapus</button>
 
                 </td>

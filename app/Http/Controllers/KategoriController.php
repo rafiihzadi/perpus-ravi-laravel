@@ -82,14 +82,12 @@ class KategoriController extends Controller
     public function update(Request $request, $id)
     {
         
-        $request->validate([
-            'nama' => 'required',
+        Kategori::find($id)->update([
+            'nama' => $request->nama,
         ]);
         
-        $kategori = Kategori::find($id);
-        $kategori->nama = $request->input('nama');
-
-        return redirect()->route('kategori.index')->with('success', 'User updated successfully.');
+        
+        return redirect()->route('kategori.index')->with('success', 'Kategori berhasil diubah.');
     }
 
     /**

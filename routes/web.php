@@ -63,7 +63,6 @@ Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store')
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::resource('penulis', PenulisController::class);
 Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penulis.store');
-Route::post('/edit-penulis', [PenulisController::class, 'update'])->name('edit.penulis');
 
 
 //Penerbit

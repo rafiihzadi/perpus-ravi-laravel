@@ -83,20 +83,15 @@ class PenerbitController extends Controller
     public function update(Request $request, $id)
     {
 
-        $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'telepon' => 'required',
-            'email' => 'required',
+        Penerbit::find($id)->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+            'email' => $request->email,
         ]);
         
-        $penerbit = Penerbit::find($id);
-        $penerbit->nama = $request->input('nama');
-        $penerbit->alamat = $request->input('alamat');
-        $penerbit->telepon = $request->input('telepon');
-        $penerbit->email = $request->input('email');
 
-        return redirect()->route('penerbit.index')->with('success', 'User updated successfully.');   
+        return redirect()->route('penerbit.index')->with('success', 'Data berhasil diubah.');   
      }
 
     /**
