@@ -17,8 +17,8 @@
         </div>
     @endif
 
-<div class="card-body">
-<form action="{{ route('penulis.update', $penulis->id) }}" method="POST" enctype="multipart/form-data">
+    <div class="card-body">
+    <form action="{{ route('penulis.update', $penulis->id) }}" method="POST" enctype="multipart/form-data">
 
     @csrf
     @method('PUT')

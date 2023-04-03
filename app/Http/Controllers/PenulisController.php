@@ -84,20 +84,15 @@ class PenulisController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'telepon' => 'required',
-            'email' => 'required',
+
+        Penulis::find($id)->update([
+            'nama' => $request->nama,
+            'alamat' => $request->alamat,
+            'telepon' => $request->telepon,
+            'email' => $request->email
         ]);
 
-        $penulis = Penulis::find($id);
-        $penulis->nama = $request->input('nama');
-        $penulis->alamat = $request->input('alamat');
-        $penulis->telepon = $request->input('telepon');
-        $penulis->email = $request->input('email');
-
-        return redirect()->route('penulis.index')->with('success', 'User updated successfully.');
+         return redirect()->route('penulis.index')->with('success', 'Data berhasil diubah.');
     }
 
     /**
