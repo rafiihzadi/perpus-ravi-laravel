@@ -65,7 +65,11 @@ Route::resource('buku', BukuController::class);
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::get('/show-penulis/{id}', [PenulisController::class, 'show'])->name('penulis.show');
-Route::post('/update', [PenulisController::class, 'store'])->name('penulis.store');
+Route::get('/penulis/edit/{id}', [PenulisController::class, 'edit'])->name('penulis.edit');
+Route::get('/create-penulis', [PenulisController::class, 'create']);
+Route::post('/penulis/update/{id}', [PenulisController::class, 'update'])->name('penulis.update');
+Route::post('/store-penulis', [PenulisController::class, 'store'])->name('buku.store');
+Route::resource('penulis', PenulisController::class);
 
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');

@@ -47,7 +47,7 @@
                 </tr>
                 @foreach($penulis as $data)
                 <tr>
-                    <td style="text-align:center">{{ $data->iteration }}</td>
+                    <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->alamat }}</td>
                     <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>
@@ -55,7 +55,7 @@
                     <td style="text-align:center"></td>
                     <td style="text-align:center">
                     <a class="btn btn-info" href="{{ route('penulis.show',$data->id) }}">Show</a>
-                        <a class="btn btn-primary">Edit</a>
+                        <a class="btn btn-primary" href="{{ route('penulis.edit',$data->id) }}">Edit</a>
                         <a class="btn btn-danger">Delete</a>
                     </td>
                 </tr>

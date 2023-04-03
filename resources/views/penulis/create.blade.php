@@ -20,7 +20,7 @@
     
     <div class="card-body">
 
-    <form action="{{ url('/update') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ url('/store-penulis') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
@@ -46,12 +46,6 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Email</strong>
-                <input type="text" name="email" class="form-control" placeholder="">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Jumlah Buku</strong>
                 <input type="text" name="email" class="form-control" placeholder="">
             </div>
         </div>
