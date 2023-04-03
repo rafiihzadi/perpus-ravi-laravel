@@ -53,12 +53,9 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 
 //Buku
 Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
-Route::get('/show/{id}', [BukuController::class, 'show'])->name('buku.show');
-Route::get('/buku/edit/{id}', [BukuController::class, 'edit'])->name('buku.edit');
-Route::get('/create-buku', [BukuController::class, 'create']);
-Route::post('/buku/update/{id}', [BukuController::class, 'update'])->name('buku.update');
-Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
 Route::resource('buku', BukuController::class);
+Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
+
 
 
 
@@ -66,27 +63,20 @@ Route::resource('buku', BukuController::class);
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::resource('penulis', PenulisController::class);
 Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penulis.store');
+Route::post('/edit-penulis', [PenulisController::class, 'update'])->name('edit.penulis');
 
 
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
-Route::get('/show-penerbit/{id}', [PenerbitController::class, 'show'])->name('penerbit.show');
-Route::get('/penerbit/edit/{id}', [PenerbitController::class, 'edit'])->name('penerbit.edit');
-Route::get('/create-penerbit', [PenerbitController::class, 'create']);
-Route::post('/penerbit/update/{id}', [PenerbitController::class, 'update'])->name('penerbit.update');
-Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
 Route::resource('penerbit', PenerbitController::class);
+Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
 
 
 
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
-Route::get('/show-kategori/{id}', [KategoriController::class, 'show'])->name('kategori.show');
-Route::get('/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
-Route::get('/create-kategori', [KategoriController::class, 'create']);
-Route::post('/kategori/update/{id}', [KategoriController::class, 'update'])->name('kategori.update');
-Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 Route::resource('kategori', KategoriController::class);
+Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 
 
 

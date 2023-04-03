@@ -107,6 +107,9 @@ class PenerbitController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $penerbit = Penerbit::find($id);
+        $penerbit->delete();
+
+        return redirect()->route('penerbit.index')->with('success','Penerbit berhasil dihapus');
     }
 }

@@ -54,9 +54,13 @@
                     <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
                     <td style="text-align:center">
-                    <a class="btn btn-info" href="{{ route('penerbit.show', $data->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('penerbit.edit',$data->id) }}">Edit</a>
-                        <a class="btn btn-danger">Delete</a>
+                    
+                    <form action="{{ route('penerbit.destroy', $data->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                             <a class="btn btn-info" href="{{ route('penerbit.show',$data->id) }}">Show</a>
+                             <a class="btn btn-primary" href="{{ route('penerbit.edit',$data->id) }}">Edit</a>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
                     </td>
 
                 </tr>

@@ -57,17 +57,13 @@
                     <td style="text-align:center">{{$data->sinopsis}}</td>
                     <td style="text-align:center">{{$data->sampul}}</td>
                 <td style="text-align:center">
-                <form action=>
-         
-                    <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
-          
-                    <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
-         
-                        @csrf
-                        @method('DELETE')
-            
-                        <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
-                </form>
+
+                <form action="{{ route('buku.destroy', $data->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                             <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
+                             <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
+                            <button type="submit" class="btn btn-danger">Hapus</button>                </form>
                 </td>
                 </tr>
                 @endforeach

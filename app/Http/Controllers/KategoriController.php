@@ -79,7 +79,7 @@ class KategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function updated(Request $request, $id)
+    public function update(Request $request, $id)
     {
         
         $request->validate([
@@ -100,6 +100,9 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $kategori = Kategori::find($id);
+        $kategori->delete();
+
+        return redirect()->route('kategori.index')->with('success','Kategori berhasil dihapus');
     }
 }
