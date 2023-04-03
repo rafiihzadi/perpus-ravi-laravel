@@ -117,6 +117,9 @@ class BukuController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $penulis = Penulis::find($id);
+        $penulis->delete();
+
+        return redirect()->route('penulis.index')->with('success', 'Penulis berhasil dihapus!');
     }
 }

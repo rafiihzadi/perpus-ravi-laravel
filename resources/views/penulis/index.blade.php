@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="{{url( 'create-penulis')}}" class="btn btn-primary btn-flat">
+            <a href="{{ route('penulis.create')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
@@ -54,9 +54,15 @@
                     <td style="text-align:center">{{ $data->email }}</td>
                     <td style="text-align:center"></td>
                     <td style="text-align:center">
-                    <a class="btn btn-info" href="{{ route('penulis.show',$data->id) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('penulis.edit',$data->id) }}">Edit</a>
-                        <a class="btn btn-danger">Delete</a>
+                   
+                        
+                        <form action="{{ route('penulis.destroy', $data->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                             <a class="btn btn-info" href="{{ route('penulis.show',$data->id) }}">Show</a>
+                             <a class="btn btn-primary" href="{{ route('penulis.edit',$data->id) }}">Edit</a>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
                     </td>
                 </tr>
                 
