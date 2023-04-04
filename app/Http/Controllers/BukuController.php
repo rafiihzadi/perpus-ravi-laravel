@@ -16,7 +16,7 @@ class BukuController extends Controller
     {
         $buku = Buku::all();
 
-        return view ('buku.index',['buku'=>$buku]);
+        return view('buku.index',['buku'=>$buku]);
     }
 
     /**
@@ -60,6 +60,7 @@ class BukuController extends Controller
     public function show($id)
     {   
         $buku = Buku::findOrFail($id);
+
         return view('buku.show', ['buku' => $buku]);
     }
 
@@ -95,10 +96,7 @@ class BukuController extends Controller
         ]);
 
         
-        
-
-
-        return redirect()->route('buku.index')->with('success', 'Data berhasil diubah.');
+    return redirect()->route('buku.index')->with('success', 'Data berhasil diubah.');
     }
 
     /**

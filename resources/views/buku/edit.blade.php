@@ -32,12 +32,6 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Alamat:</strong>
-                <input type="text" name="alamat" class="form-control" value="{{ $buku->alamat }}">
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
                 <strong>Tahun Terbit:</strong>
                 <input type="text" name="tahun terbit" class="form-control" value="{{ $buku->telepon }}">
             </div>
@@ -72,8 +66,6 @@
                 <input type="text" name="sampul" class="form-control" value="{{ $buku->email }}">
             </div>
         </div>
-        
-        
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="{{ route('buku.index') }}" class="btn btn-warning">Kembali</a>
