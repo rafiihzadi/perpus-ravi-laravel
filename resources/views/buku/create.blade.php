@@ -40,15 +40,27 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Penerbit:</strong>
-                  <input type="text" name="id_penerbit" class="form-control" placeholder="">
-                 </div>
+                </div>
+                <div class="form-group" style="height: auto;">
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_penerbit" id="id_penerbit">
+                    @foreach($penulis as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                    </select>
+                </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Kategori:</strong>
-                  <input type="text" name="id_kategori" class="form-control" placeholder="">
                 </div>
-          </div>
+                <div class="form-group" style="height: auto;">
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_kategori" id="id_kategori">
+                    @foreach($penulis as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                    </select>
+                </div>          
+            </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="form-group">
               <strong>Sinopsis:</strong>

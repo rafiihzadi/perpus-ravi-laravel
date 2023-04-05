@@ -104,7 +104,7 @@ class BukuController extends Controller
         ]);
 
         
-    return redirect()->route('buku.index')->with('success', 'Data berhasil diubah.');
+    return redirect()->route('buku.index')->with('success', 'Data berhasil dubah.');
     }
 
     /**
