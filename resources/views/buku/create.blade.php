@@ -26,9 +26,15 @@
               </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
-              <div class="form-group">
+                <div class="form-group">
                   <strong>Penulis:</strong>
-                  <input type="text" name="id_penulis" class="form-control" placeholder="">
+                </div>
+                <div class="form-group" style="height: auto;">
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_penulis" id="id_penulis">
+                    @foreach($penulis as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                    </select>
                 </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">

@@ -51,19 +51,20 @@
                 <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->tahun_terbit }}</td>
-                    <td style="text-align:center" style="text-align:center">{{ $data->id_penulis }}</td>
-                    <td style="text-align:center">{{ $data->id_penerbit }}</td>
+                    <td style="text-align:center" style="text-align:center">{{ @$data->penulis->nama}}</td>
+                    <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
                     <td style="text-align:center">{{$data->id_kategori}}</td>
                     <td style="text-align:center">{{$data->sinopsis}}</td>
                     <td style="text-align:center">{{$data->sampul}}</td>
                 <td style="text-align:center">
 
                 <form action="{{ route('buku.destroy', $data->id) }}" method="POST">
-                            {{ csrf_field() }}
-                            {{ method_field('DELETE') }}
-                             <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
-                             <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
-                            <button type="submit" class="btn btn-danger">Hapus</button>                </form>
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                        <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
+                    <button type="submit" class="btn btn-danger">Hapus</button>                
+                </form>
                 </td>
                 </tr>
                 @endforeach

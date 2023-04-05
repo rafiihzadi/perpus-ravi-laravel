@@ -33,37 +33,44 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tahun Terbit:</strong>
-                <input type="text" name="tahun terbit" class="form-control" value="{{ $buku->telepon }}">
+                <input type="text" name="tahun_terbit" class="form-control" value="{{ $buku->tahun_terbit }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Penulis:</strong>
-                <input type="text" name="penulis" class="form-control" value="{{ $buku->email }}">
+            </div>
+            <div class="form-group">
+                <select class="form-control select2" style="width: 100%;" name="id_penulis" value="{{ old('nama',@$buku->id_penulis) }}">
+                    <option disabled value>Pilih Penulis</option>
+                    @foreach($penulis as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Penerbit:</strong>
-                <input type="text" name="penerbit" class="form-control" value="{{ $buku->email }}">
+                <input type="text" name="penerbit" class="form-control" value="{{ $buku->penerbit }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Kategori:</strong>
-                <input type="text" name="kategori" class="form-control" value="{{ $buku->email }}">
+                <input type="text" name="kategori" class="form-control" value="{{ $buku->kategori }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sinopsis:</strong>
-                <input type="text" name="sinopsis" class="form-control" value="{{ $buku->email }}">
+                <input type="text" name="sinopsis" class="form-control" value="{{ $buku->sinopsis }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sampul:</strong>
-                <input type="text" name="sampul" class="form-control" value="{{ $buku->email }}">
+                <input type="text" name="sampul" class="form-control" value="{{ $buku->sampul }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Buku;
+use App\Models\Penerbit;
+use App\Models\Penulis;
 
 class BukuController extends Controller
 {
@@ -16,6 +18,8 @@ class BukuController extends Controller
     {
         $buku = Buku::all();
 
+        $book = Buku::with('penulis', 'penerbit', 'kategori')->paginate(10);
+
         return view('buku.index',['buku'=>$buku]);
     }
 
@@ -26,7 +30,9 @@ class BukuController extends Controller
      */
     public function create()
     {
-        return view('buku.create');
+        $penulis = Penulis::all();
+
+        return view('buku.create', compact('penulis'));
     }
 
     /**
@@ -73,7 +79,9 @@ class BukuController extends Controller
     public function edit($id)
     {
         $buku = Buku::find($id);
-        return view('buku.edit', compact('buku'));
+        $penulis = Penulis::all();
+
+        return view('buku.edit', compact('penulis', 'buku'));
     }
 
     /**
