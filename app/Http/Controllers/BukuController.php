@@ -20,7 +20,7 @@ class BukuController extends Controller
 
         $book = Buku::with('penulis', 'penerbit', 'kategori')->paginate(10);
 
-        return view('buku.index',['buku'=>$buku]);
+        return view ('buku.index',['buku'=>$buku]);
     }
 
     /**

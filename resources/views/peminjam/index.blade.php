@@ -37,27 +37,29 @@
             <table class="table table-bordered table-condensed">
                 <tr>
                     <th style="text-align:center;">No</th>
-                    <th style="text-align:center;">nama buku</th>
-                    <th style="text-align:center;">nama anggota</th>
-                    <th style="text-align:center;">tanggal pinjam</th>
-                    <th style="text-align:center;">tanggal kembali</th>
-                    <th style="text-align:center">denda</th>
-                    <th style="text-align:center">status</th>
-                    <th style="text-align:center">opsi</th>
+                    <th style="text-align:center;">Nama Buku</th>
+                    <th style="text-align:center;">Nama Anggota</th>
+                    <th style="text-align:center;">Tanggal Pinjam</th>
+                    <th style="text-align:center;">Tanggal Kembali</th>
+                    <th style="text-align:center">Denda</th>
+                    <th style="text-align:center">Status</th>
+                    <th style="text-align:center">Opsi</th>
 
                 </tr>
                 @foreach($peminjam as $data)
                 <tr>
                 <td style="text-align:center">{{ $loop->iteration }}</td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center" style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
-                    <td style="text-align:center"></td>
+                    <td style="text-align:center">{{ $data->nama_buku }}</td>
+                    <td style="text-align:center" style="text-align:center">{{ $data->nama_anggota }}</td>
+                    <td style="text-align:center">{{ $data->tanggal_pinjam }}</td>
+                    <td style="text-align:center">{{ $data->tanggal_kembali }}</td>
+                    <td style="text-align:center">{{ $data->denda}}</td>
+                    <td style="text-align:center">{{ $data->status}}</td>
                 <td style="text-align:center">
-                <form action=>
-                    <a class="btn btn-info" href="">Show</a>
+
+                <form action="{{ route('peminjam.destroy', $data->id) }}" method="POST">
+                
+                <a class="btn btn-primary" href="{{ route('peminjam.edit',$data->id) }}">Edit</a>
           
                     <a class="btn btn-primary" href="">Edit</a>
          
@@ -65,11 +67,11 @@
                         @method('DELETE')
             
                         <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
-                </form>
                 </td>
                 </tr>
-
-
+                @endforeach
+            </tr>
+            
             </table>
         </div>
     </div>

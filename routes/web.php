@@ -12,6 +12,7 @@ use App\Models\Buku;
 use App\Models\Penulis;
 use App\Models\Penerbit;
 use App\Models\Kategori;
+use App\Models\Peminjam;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,5 +86,8 @@ Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kate
 
 
 //Peminjam
-Route::get('/peminjam', [PeminjamController::class, 'index']);
+Route::get('/peminjam', [PeminjamController::class, 'index'])->name('peminjam.index');
+Route::resource('peminjam', PeminjamController::class);
 Route::get('/create-peminjam', [PeminjamController::class, 'create']);
+Route::post('/store-peminjam', [PeminjamController::class, 'store'])->name('peminjam.store');
+
