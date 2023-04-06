@@ -41,10 +41,10 @@
                 <strong>Penulis:</strong>
             </div>
             <div class="form-group">
-                <select class="form-control select2" style="width: 100%;" name="id_penulis" value="{{ old('nama',@$buku->id_penulis) }}">
+                <select class="js-example-basic-single" style="width: 100%;" name="id_penulis" id="id_penulis">
                     <option disabled value>Pilih Penulis</option>
                     @foreach($penulis as $item)
-                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                        <option value="{{ $item->id }}" @if(old('id_penulis') == $item->id) selected @endif>{{$item->nama}}</option>
                     @endforeach
                 </select>
             </div>
@@ -54,28 +54,25 @@
                 <strong>Penerbit:</strong>
             </div>
             <div class="form-group">
-                <select class="form-control select2" style="width: 100%;" name="id_penerbit" value="{{ old('nama',@$buku->id_penerbit) }}">
+                <select class="js-example-basic-single" style="width: 100%;" name="id_penerbit" id="id_penerbit">
                     <option disabled value>Pilih Penerbit</option>
-                    @foreach($penulis as $item)
-                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @foreach($penerbit as $item)
+                        <option value="{{ $item->id }}" @if(old('id_penerbit') == $item->id) selected @endif>{{$item->nama}}</option>
                     @endforeach
                 </select>
             </div>
-        </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Kategori:</strong>
-            </div>
-            <div class="form-group">
-                <select class="form-control select2" style="width: 100%;" name="id_kategori" value="{{ old('nama',@$buku->id_kategori) }}">
+                <label for="kategori" class="form-label">Kategori</label>
+                <select name="id_kategori" id="id_kategori" class="form-control">
                     <option disabled value>Pilih Kategori</option>
-                    @foreach($penulis as $item)
-                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @foreach($kategori as $item)
+                        <option value="{{ $item->id }}" @if(old('id_kategori') == $item->id) selected @endif>{{ $item->nama }}</option>
                     @endforeach
                 </select>
             </div>
-        </div>        </div>
+        </div>  
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sinopsis:</strong>
