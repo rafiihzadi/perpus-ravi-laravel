@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="{{url('create-peminjam')}}" class="btn btn-primary btn-flat">
+            <a href="{{url('create-peminjaman')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
@@ -46,7 +46,7 @@
                     <th style="text-align:center">Opsi</th>
 
                 </tr>
-                @foreach($peminjam as $data)
+                @foreach($peminjaman as $data)
                 <tr>
                 <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama_buku }}</td>
@@ -57,9 +57,9 @@
                     <td style="text-align:center">{{ $data->status}}</td>
                 <td style="text-align:center">
 
-                <form action="{{ route('peminjam.destroy', $data->id) }}" method="POST">
+                <form action="{{ route('peminjaman.destroy', $data->id) }}" method="POST">
                 
-                <a class="btn btn-primary" href="{{ route('peminjam.edit',$data->id) }}">Edit</a>
+                <a class="btn btn-primary" href="{{ route('peminjaman.edit',$data->id) }}">Edit</a>
           
                     <a class="btn btn-primary" href="">Edit</a>
          

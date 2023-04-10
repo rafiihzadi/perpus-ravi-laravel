@@ -9,19 +9,15 @@
     </div>
     
     <div class="card-body">
-      <form action="{{url('/store-peminjam')}}" method="post" enctype="multipart/form-data">
+      <form action="{{url('/store-peminjaman')}}" method="post" enctype="multipart/form-data">
         @csrf
 
        <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12">
-              <div class="form-group">
-                  <strong>no</strong>
-                  <input type="text" name="nama" class="form-control" placeholder="" autofocus>
-              </div>
             </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
-                  <strong>nama Buku</strong>
+                  <strong>Nama Buku</strong>
                   <input type="text" name="nama" class="form-control" placeholder="" autofocus>
               </div>
             </div>

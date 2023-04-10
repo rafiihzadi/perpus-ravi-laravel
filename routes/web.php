@@ -7,12 +7,12 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\PenulisController;
 use App\Http\Controllers\PenerbitController;
 use App\Http\Controllers\KategoriController;
-use App\Http\Controllers\PeminjamController;
+use App\Http\Controllers\PeminjamanController;
 use App\Models\Buku;
 use App\Models\Penulis;
 use App\Models\Penerbit;
 use App\Models\Kategori;
-use App\Models\Peminjam;
+use App\Models\Peminjaman;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,8 +59,6 @@ Route::get('/create-buku', [BukuController::class, 'create']);
 Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
 
 
-
-
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::resource('penulis', PenulisController::class);
@@ -83,11 +81,9 @@ Route::get('/create-kategori', [KategoriController::class, 'create']);
 Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 
 
-
-
 //Peminjam
-Route::get('/peminjam', [PeminjamController::class, 'index'])->name('peminjam.index');
-Route::resource('peminjam', PeminjamController::class);
-Route::get('/create-peminjam', [PeminjamController::class, 'create']);
-Route::post('/store-peminjam', [PeminjamController::class, 'store'])->name('peminjam.store');
+Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
+Route::resource('peminjaman', PeminjamanController::class);
+Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);
+Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
 

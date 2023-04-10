@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Peminjam;
+use App\Models\Peminjaman;
 
-class PeminjamController extends Controller
+class PeminjamanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,10 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjam = Peminjam::all();
-        return view ('peminjam.index',['peminjam'=>$peminjam]);    }
+        $peminjaman = Peminjaman::all();
+        
+        return view ('peminjaman.index',['peminjaman'=>$peminjaman]);    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +26,7 @@ class PeminjamController extends Controller
      */
     public function create()
     {
-        return view('peminjam.create');
+        return view('peminjaman.create');
     }
 
     /**
@@ -54,9 +56,9 @@ class PeminjamController extends Controller
      */
     public function show($id)
     {
-        $peminjam = Peminjam::findOrFail($id);
+        $peminjam = Peminjaman::findOrFail($id);
         
-        return view('peminjam.show', ['peminjam' => $peminjam]);
+        return view('peminjaman.show', ['peminjam' => $peminjam]);
     }
 
     /**
@@ -89,7 +91,7 @@ class PeminjamController extends Controller
         ]);
         
 
-        return redirect()->route('peminjam.index')->with('success', 'Data berhasil diubah.');   
+        return redirect()->route('peminjaman.index')->with('success', 'Data berhasil diubah.');   
     }
 
     /**
@@ -104,6 +106,6 @@ class PeminjamController extends Controller
         $peminjam = Peminjam::find($id);
         $peminjam->delete();
 
-        return redirect()->route('peminjam.index')->with('success', 'Peminjam berhasil dihapus!');
+        return redirect()->route('peminjaman.index')->with('success', 'Peminjam berhasil dihapus!');
     }
 }

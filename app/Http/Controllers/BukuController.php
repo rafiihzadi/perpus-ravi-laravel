@@ -19,13 +19,9 @@ class BukuController extends Controller
     {
         $buku = Buku::all();
 
-<<<<<<< HEAD
         $book = Buku::with('penulis', 'penerbit', 'kategori')->paginate(10);
 
         return view ('buku.index',['buku'=>$buku]);
-=======
-        return view('buku.index',['buku'=>$buku]);
->>>>>>> da5a09e03334bfa6d5c459c406317a06315ad6d6
     }
 
     /**
