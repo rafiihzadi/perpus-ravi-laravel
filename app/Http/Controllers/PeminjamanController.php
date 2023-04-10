@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Peminjam;
+use App\Models\Peminjaman;
 
-class PeminjamController extends Controller
+class PeminjamanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,10 @@ class PeminjamController extends Controller
      */
     public function index()
     {
-        $peminjam = Peminjam::all();
-        return view ('peminjam.index',['peminjam'=>$peminjam]);    }
+        $peminjaman = Peminjaman::all();
+        
+        return view ('peminjaman.index',['peminjaman'=>$peminjaman]);    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -24,7 +26,7 @@ class PeminjamController extends Controller
      */
     public function create()
     {
-        return view('peminjam.create');
+        return view('peminjaman.create');
     }
 
     /**
@@ -35,14 +37,14 @@ class PeminjamController extends Controller
      */
     public function store(Request $request)
     {
-        $peminjam = new Peminjam;
-        $peminjam->id_buku = $request->id_buku;
-        $peminjam->id_anggota = $request->id_anggota;
-        $peminjam->tanggal_pinjam = $request->tanggal_pinjam;
-        $peminjam->tanggal_kembali = $request->tanggal_kembali;
-        $peminjam->denda = $request->denda;
-        $peminjam->status = $request->status;
-        $peminjam->save();
+        $peminjaman = new Peminjaman;
+        $peminjaman->id_buku = $request->id_buku;
+        $peminjaman->id_anggota = $request->id_anggota;
+        $peminjaman->tanggal_pinjam = $request->tanggal_pinjam;
+        $peminjaman->tanggal_kembali = $request->tanggal_kembali;
+        $peminjaman->denda = $request->denda;
+        $peminjaman->status = $request->status;
+        $peminjaman->save();
 
     }
 
@@ -54,9 +56,9 @@ class PeminjamController extends Controller
      */
     public function show($id)
     {
-        $peminjam = Peminjam::findOrFail($id);
+        $peminjaman = Peminjaman::findOrFail($id);
         
-        return view('peminjam.show', ['peminjam' => $peminjam]);
+        return view('peminjaman.show', ['peminjaman' => $peminjaman]);
     }
 
     /**
@@ -79,7 +81,7 @@ class PeminjamController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Peminjam::find($id)->update([
+        Peminjaman::find($id)->update([
             'nama buku' => $request->id_buku,
             'nama anggota' => $request->id_anggota,
             'tanggal pinjam' => $request->tanggal_pinjam,
@@ -89,7 +91,7 @@ class PeminjamController extends Controller
         ]);
         
 
-        return redirect()->route('peminjam.index')->with('success', 'Data berhasil diubah.');   
+        return redirect()->route('peminjaman.index')->with('success', 'Data berhasil diubah.');   
     }
 
     /**
@@ -101,9 +103,9 @@ class PeminjamController extends Controller
     public function destroy($id)
     {
         
-        $peminjam = Peminjam::find($id);
-        $peminjam->delete();
+        $peminjaman = Peminjaman::find($id);
+        $peminjaman->delete();
 
-        return redirect()->route('peminjam.index')->with('success', 'Peminjam berhasil dihapus!');
+        return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
     }
 }

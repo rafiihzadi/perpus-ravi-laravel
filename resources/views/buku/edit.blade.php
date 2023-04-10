@@ -72,12 +72,12 @@
                     @endforeach
                 </select>
             </div>
-<<<<<<< HEAD
+
         </div>        
     </div>
-=======
+
         </div>  
->>>>>>> da5a09e03334bfa6d5c459c406317a06315ad6d6
+
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Sinopsis:</strong>
