@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Buku;
 use App\Models\Penerbit;
 use App\Models\Penulis;
+use App\Models\Kategori;
 
 class BukuController extends Controller
 {
@@ -18,9 +19,13 @@ class BukuController extends Controller
     {
         $buku = Buku::all();
 
+<<<<<<< HEAD
         $book = Buku::with('penulis', 'penerbit', 'kategori')->paginate(10);
 
         return view ('buku.index',['buku'=>$buku]);
+=======
+        return view('buku.index',['buku'=>$buku]);
+>>>>>>> da5a09e03334bfa6d5c459c406317a06315ad6d6
     }
 
     /**
@@ -32,7 +37,11 @@ class BukuController extends Controller
     {
         $penulis = Penulis::all();
 
-        return view('buku.create', compact('penulis'));
+        $penerbit = Penerbit::all();
+
+        $kategori = Kategori::all();
+
+        return view('buku.create', compact('penulis', 'penerbit', 'kategori'));
     }
 
     /**
@@ -80,8 +89,10 @@ class BukuController extends Controller
     {
         $buku = Buku::find($id);
         $penulis = Penulis::all();
+        $penerbit = Penerbit::all();
+        $kategori = Kategori::all();
 
-        return view('buku.edit', compact('penulis', 'buku'));
+        return view('buku.edit', compact('penulis', 'buku', 'penerbit', 'kategori'));
     }
 
     /**

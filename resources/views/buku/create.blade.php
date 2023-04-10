@@ -43,7 +43,7 @@
                 </div>
                 <div class="form-group" style="height: auto;">
                     <select class="js-example-basic-single" style="width: 100%;" name="id_penerbit" id="id_penerbit">
-                    @foreach($penulis as $item)
+                    @foreach($penerbit as $item)
                         <option value="{{ $item->id }}">{{ $item->nama }}</option>
                     @endforeach
                     </select>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group" style="height: auto;">
                     <select class="js-example-basic-single" style="width: 100%;" name="id_kategori" id="id_kategori">
-                    @foreach($penulis as $item)
+                    @foreach($kategori as $item)
                         <option value="{{ $item->id }}">{{ $item->nama }}</option>
                     @endforeach
                     </select>

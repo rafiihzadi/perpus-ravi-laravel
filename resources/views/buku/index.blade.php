@@ -52,8 +52,13 @@
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->tahun_terbit }}</td>
                     <td style="text-align:center" style="text-align:center">{{ @$data->penulis->nama}}</td>
+<<<<<<< HEAD
                     <td style="text-align:center">{{ @$data->penerbit }}</td>
                     <td style="text-align:center">{{$data->id_kategori}}</td>
+=======
+                    <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
+                    <td style="text-align:center">{{ @$data->kategori->nama}}</td>
+>>>>>>> da5a09e03334bfa6d5c459c406317a06315ad6d6
                     <td style="text-align:center">{{$data->sinopsis}}</td>
                     <td style="text-align:center">{{$data->sampul}}</td>
                 <td style="text-align:center">
