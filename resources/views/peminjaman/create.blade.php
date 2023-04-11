@@ -23,6 +23,9 @@
     <div class="card-body">
       
       <form action="{{url('/store-peminjaman')}}" method="POST" enctype="multipart/form-data">
+
+      <form action="{{url('/store-peminjaman')}}" method="post" enctype="multipart/form-data">
+
         @csrf
 
        <div class="row">

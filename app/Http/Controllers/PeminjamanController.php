@@ -56,9 +56,15 @@ class PeminjamanController extends Controller
      */
     public function show($id)
     {
+
         $peminjaman = Peminjaman::findOrFail($id);
         
         return view('peminjaman.show', ['peminjaman' => $peminjaman]);
+
+        $peminjam = Peminjaman::findOrFail($id);
+        
+        return view('peminjaman.show', ['peminjam' => $peminjam]);
+
     }
 
     /**
@@ -106,6 +112,10 @@ class PeminjamanController extends Controller
         $peminjaman = Peminjaman::find($id);
         $peminjaman->delete();
 
+
         return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
+
+        return redirect()->route('peminjaman.index')->with('success', 'Peminjam berhasil dihapus!');
+
     }
 }

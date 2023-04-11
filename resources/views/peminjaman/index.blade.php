@@ -23,7 +23,10 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
+
             <a href="{{ route('peminjaman.create')}}" class="btn btn-primary btn-flat">
+
+            <a href="{{url('create-peminjaman')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
@@ -57,12 +60,22 @@
                 <td style="text-align:center">
 
                 <form action="{{ route('peminjaman.destroy', $data->id) }}" method="POST">
+
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <a class="btn btn-info" href="{{ route('peminjaman.show',$data->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('peminjaman.edit',$data->id) }}">Edit</a>
                 <button type="submit" class="btn btn-danger">Hapus</button>                
             </form>
+                
+                <a class="btn btn-primary" href="{{ route('peminjaman.edit',$data->id) }}">Edit</a>
+          
+                    <a class="btn btn-primary" href="">Edit</a>
+         
+                        @csrf
+                        @method('DELETE')
+            
+                        <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
                 </td>
                 </tr>
                 @endforeach
