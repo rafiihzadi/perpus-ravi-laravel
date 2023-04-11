@@ -4,7 +4,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h2 class="card-title">Data Peminjam </h2>
+        <h2 class="card-title">Data Peminjaman</h2>
     </div>
 
     <div class="row" style="margin-top: 1rem;">
@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="{{url('create-peminjaman')}}" class="btn btn-primary btn-flat">
+            <a href="{{ route('peminjaman.create')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
@@ -57,13 +57,12 @@
                 <td style="text-align:center">
 
                 <form action="{{ route('peminjaman.destroy', $data->id) }}" method="POST">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
                 <a class="btn btn-info" href="{{ route('peminjaman.show',$data->id) }}">Show</a>
                 <a class="btn btn-primary" href="{{ route('peminjaman.edit',$data->id) }}">Edit</a>
-                   
-                        @csrf
-                        @method('DELETE')
-            
-                        <button type="submit" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Data Ini?');" class="btn btn-danger">Delete</button>
+                <button type="submit" class="btn btn-danger">Hapus</button>                
+            </form>
                 </td>
                 </tr>
                 @endforeach
