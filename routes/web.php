@@ -86,4 +86,3 @@ Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminja
 Route::resource('peminjaman', PeminjamanController::class);
 Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);
 Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
-Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');

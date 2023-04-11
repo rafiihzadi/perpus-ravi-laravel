@@ -5,7 +5,7 @@
 <div class="card card-primary">
     <div class="card-header">
         <h2 class="card-title">Data Buku</h2>
-    </div>
+</div>
 
     <div class="row" style="margin-top: 1rem;">
         <div class="col-lg-12 margin-tb">
@@ -52,6 +52,9 @@
                     <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ $data->tahun_terbit }}</td>
                     <td style="text-align:center" style="text-align:center">{{ @$data->penulis->nama}}</td>
+                    <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
+                    <td style="text-align:center">{{$data->id_kategori}}</td>
+                    <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
                     <td style="text-align:center">{{ @$data->penerbit->nama}}</td>
                     <td style="text-align:center">{{ @$data->kategori->nama}}</td>
                     <td style="text-align:center">{{$data->sinopsis}}</td>

@@ -22,9 +22,8 @@
     
     <div class="card-body">
       
-      <form action="{{url('/store-peminjaman')}}" method="POST" enctype="multipart/form-data">
-
       <form action="{{url('/store-peminjaman')}}" method="post" enctype="multipart/form-data">
+
 
         @csrf
 
@@ -34,42 +33,50 @@
               <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Nama Buku</strong>
-                  <input type="text" name="nama" class="form-control" placeholder="" autofocus>
-              </div>
+                  </div>
+                <div class="form-group" style="height: auto;">
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_buku" id="id_buku">
+                    @foreach($buku as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                    </select>              
+                  </div>
             </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>nama anggota</strong>
-                  <input type="text" name="anggota" class="form-control" placeholder="" autofocus>
+                  </div>
+                <div class="form-group" style="height: auto;">
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_anggota" id="id_anggota">
+                    @foreach($anggota as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                    </select>
               </div>
              </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>tanggal pinjam</strong>
-                  <input type="text" name="tanggal pinjam" class="form-control" placeholder="" autofocus>
+                  <input type="text" name="tanggal pinjam" class="form-control" placeholder="" >
               </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>tanggal kembali</strong>
-                    <input type="text" name="tanggal kembali" class="form-control" placeholder="" autofocus>
+                    <input type="text" name="tanggal kembali" class="form-control" placeholder="">
                 </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>denda</strong>
-                    <input type="text" name="denda" class="form-control" placeholder="" autofocus>
+                    <input type="text" name="denda" class="form-control" placeholder="">
                 </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">
               <button type="submit" class="btn btn-primary">Simpan</button>
+
               <a href="{{ url('peminjaman') }}" class="btn btn-warning">Kembali</a>
-          </div>
         </div>
       </form>
-    </div>
-  </div>
 </div>
-
-
 @endsection

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Peminjaman;
+use App\Models\Buku;
+use App\Models\Anggota;
 
 class PeminjamanController extends Controller
 {
@@ -16,6 +18,8 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::all();
         
+        $book = Peminjaman::with('buku','anggota')->paginate(10);
+        
         return view ('peminjaman.index',['peminjaman'=>$peminjaman]);    
     }
 
@@ -26,7 +30,11 @@ class PeminjamanController extends Controller
      */
     public function create()
     {
-        return view('peminjaman.create');
+        $buku = Buku::all();
+
+        $anggota = Anggota::all();
+
+        return view('peminjaman.create',compact('buku','anggota'));
     }
 
     /**
@@ -56,15 +64,9 @@ class PeminjamanController extends Controller
      */
     public function show($id)
     {
-
         $peminjaman = Peminjaman::findOrFail($id);
         
         return view('peminjaman.show', ['peminjaman' => $peminjaman]);
-
-        $peminjam = Peminjaman::findOrFail($id);
-        
-        return view('peminjaman.show', ['peminjam' => $peminjam]);
-
     }
 
     /**
@@ -75,7 +77,10 @@ class PeminjamanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $buku = Buku::find($id);
+        $anggota = Anggota::all();
+
+        return view('peminjaman.edit', compact('buku'));
     }
 
     /**
@@ -112,10 +117,6 @@ class PeminjamanController extends Controller
         $peminjaman = Peminjaman::find($id);
         $peminjaman->delete();
 
-
         return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
-
-        return redirect()->route('peminjaman.index')->with('success', 'Peminjam berhasil dihapus!');
-
     }
 }
