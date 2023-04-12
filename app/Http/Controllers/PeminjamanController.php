@@ -18,7 +18,7 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::all();
         
-        $book = Peminjaman::with('buku','anggota')->paginate(10);
+        $book = Peminjaman::with('buku')->paginate(10);
         
         return view ('peminjaman.index',['peminjaman'=>$peminjaman]);    
     }
@@ -32,9 +32,9 @@ class PeminjamanController extends Controller
     {
         $buku = Buku::all();
 
-        $anggota = Anggota::all();
+        // $anggota = Anggota::all();
 
-        return view('peminjaman.create',compact('buku','anggota'));
+        return view('peminjaman.create',compact('buku'));
     }
 
     /**
