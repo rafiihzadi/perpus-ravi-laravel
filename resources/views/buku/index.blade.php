@@ -64,8 +64,9 @@
                 <form action="{{ route('buku.destroy', $data->id) }}" method="POST">
                     {{ csrf_field() }}
                     {{ method_field('DELETE') }}
-                        <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
+                    
+                    <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
+                    <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
                     <button type="submit" class="btn btn-danger">Hapus</button>                
                 </form>
                 </td>

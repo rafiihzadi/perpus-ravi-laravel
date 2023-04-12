@@ -8,11 +8,13 @@ use App\Http\Controllers\PenulisController;
 use App\Http\Controllers\PenerbitController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PeminjamanController;
+use App\Http\Controllers\AnggotaController;
 use App\Models\Buku;
 use App\Models\Penulis;
 use App\Models\Penerbit;
 use App\Models\Kategori;
 use App\Models\Peminjaman;
+use App\Models\Anggota;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,3 +88,11 @@ Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminja
 Route::resource('peminjaman', PeminjamanController::class);
 Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);
 Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
+
+//Anggota
+Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
+Route::resource('anggota', AnggotaController::class);
+Route::get('/create-anggota', [AnggotaController::class, 'create']);
+Route::post('/store-anggota', [AnggotaController::class, 'store'])->name('anggota.store');
+
+

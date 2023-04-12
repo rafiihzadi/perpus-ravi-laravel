@@ -8,7 +8,7 @@
 
 <div class="card card-primary">
     <div class="card-header">
-        <h2 class="card-title">Create Data Peminjam</h2>
+        <h2 class="card-title">Create Data Peminjaman</h2>
     </div>
 
     

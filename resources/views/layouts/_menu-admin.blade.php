@@ -73,6 +73,16 @@
           </p>
         </a>
       </li>
+
+        
+      <li class="nav-item">
+        <a href="{{url('/anggota') }}" class="nav-link">
+          <i class="fa-solid fa-user"></i>
+          <p>
+            Anggota
+          </p>
+        </a>
+      </li>
         
 
       <li class="nav-header">SISTEM</li>
