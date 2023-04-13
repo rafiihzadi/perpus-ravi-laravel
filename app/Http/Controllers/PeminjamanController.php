@@ -32,9 +32,9 @@ class PeminjamanController extends Controller
     {
         $buku = Buku::all();
 
-        // $anggota = Anggota::all();
+        $anggota = Anggota::all();
 
-        return view('peminjaman.create',compact('buku'));
+        return view('peminjaman.create',compact('buku','anggota'));
     }
 
     /**
@@ -53,6 +53,9 @@ class PeminjamanController extends Controller
         $peminjaman->denda = $request->denda;
         $peminjaman->status = $request->status;
         $peminjaman->save();
+
+        return redirect()->route('peminjaman.index');
+
 
     }
 
@@ -78,7 +81,7 @@ class PeminjamanController extends Controller
     public function edit($id)
     {
         $buku = Buku::find($id);
-        $anggota = Anggota::all();
+        // $anggota = Anggota::all();
 
         return view('peminjaman.edit', compact('buku'));
     }

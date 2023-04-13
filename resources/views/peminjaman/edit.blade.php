@@ -3,7 +3,7 @@
 @section('content')
    <div class="card card-primary">
     <div class="card-header">
-        <h2 class="card-title">Edit Data Peminjam</h2>
+        <h2 class="card-title">Edit Data Peminjaman</h2>
     </div>
 
 @if ($errors->any())
@@ -39,13 +39,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Pinjam:</strong>
-                <input type="text" name="tanggal pinjam" class="form-control" value="{{ $peminjaman->tanggal pinjam }}">
+                <input type="text" name="tanggal pinjam" class="form-control" value="{{ $peminjaman->tanggal_pinjam }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Kembali:</strong>
-                <input type="text" name="tanggal kembali" class="form-control" value="{{ $peminjaman->tanggal kembali }}">
+                <input type="text" name="tanggal kembali" class="form-control" value="{{ $peminjaman->tanggal_kembali }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -56,7 +56,7 @@
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <button type="submit" class="btn btn-primary">Simpan</button>
-                <a href="{{ route('penerbit.index') }}" class="btn btn-warning">Kembali</a>
+                <a href="{{ route('peminjaman.index') }}" class="btn btn-warning">Kembali</a>
         </div>
     </div>
 

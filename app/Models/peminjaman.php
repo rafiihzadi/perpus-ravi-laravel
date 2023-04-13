@@ -22,9 +22,9 @@ class Peminjaman extends Model
         return $this->belongsTo(Buku::class, 'id_buku', 'id');
     }
 
-    // public function anggota()
-    // {
-    //     return $this->belongsTo(Anggota::class,'id_anggota','id');
-    // }
+    public function anggota()
+    {
+        return $this->belongsTo(Anggota::class,'id_anggota','id');
+    }
 
 }
