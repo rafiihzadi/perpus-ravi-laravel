@@ -26,7 +26,9 @@ class AnggotaController extends Controller
      */
     public function create()
     {
-        return view('anggota.create');
+        $anggota = Anggota::all();
+
+        return view('anggota.create',compact('anggota'));
     }
 
     /**

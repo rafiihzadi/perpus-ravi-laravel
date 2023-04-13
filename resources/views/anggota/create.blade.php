@@ -59,7 +59,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <button type="submit" class="btn btn-primary">Simpan</button>
 
-            <a href="{{ url('/index') }}" class="btn btn-warning">Kembali</a>
+            <a href="{{ url('/anggota') }}" class="btn btn-warning">Kembali</a>
         </div>
     </form>
 </div>

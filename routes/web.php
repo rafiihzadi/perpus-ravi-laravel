@@ -83,7 +83,7 @@ Route::get('/create-kategori', [KategoriController::class, 'create']);
 Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 
 
-//Peminjam
+//Peminjaman
 Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
 Route::resource('peminjaman', PeminjamanController::class);
 Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);

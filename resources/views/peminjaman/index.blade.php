@@ -56,13 +56,14 @@
                     <td style="text-align:center">{{ $data->status }}</td>
                     <td style="text-align:center">
 
-                <form action="{{ route('peminjaman.destroy', $data->id) }}" method="POST">
-                    
-                    <a class="btn btn-info" href="{{ route('peminjaman.show',$data->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('peminjaman.edit',$data->id) }}">Edit</a>
-                    <button type="submit" class="btn btn-danger">Hapus</button>                
-                </form>
-                </td>
+                    <form action="{{ route('peminjaman.destroy', $data->id) }}" method="POST">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
+                             <a class="btn btn-info" href="{{ route('peminjaman.show',$data->id) }}">Show</a>
+                             <a class="btn btn-primary" href="{{ route('peminjaman.edit',$data->id) }}">Edit</a>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </table>

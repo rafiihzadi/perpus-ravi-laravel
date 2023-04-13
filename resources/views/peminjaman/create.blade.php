@@ -2,10 +2,6 @@
 
 @section('content')
 
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
-
 <div class="card card-primary">
     <div class="card-header">
         <h2 class="card-title">Create Data Peminjaman</h2>
@@ -31,8 +27,6 @@
         @csrf
 
        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-            </div>
               <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>Nama Buku</strong>
@@ -72,6 +66,12 @@
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>denda</strong>
+                    <input type="text" name="denda" class="form-control" placeholder="">
+                </div>
+                </div>
+          <div class="col-xs-12 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <strong>status</strong>
                     <input type="text" name="denda" class="form-control" placeholder="">
                 </div>
           </div>

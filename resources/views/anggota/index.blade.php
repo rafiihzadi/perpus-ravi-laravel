@@ -37,7 +37,7 @@
             <table class="table table-bordered table-condensed">
                 <tr>
                     <th style="text-align:center;">No</th>
-                    <th style="text-align:center;">Nama</th>
+                    <th style="text-align:center;">Nama Anggota</th>
                     <th style="text-align:center;">Alamat</th>
                     <th style="text-align:center;">No.Telepon</th>
                     <th style="text-align:center;">Email</th>
@@ -56,7 +56,7 @@
                     <td style="text-align:center">
                    
                         
-                        <form action="{{ route('anggota.destroy', $data->id) }}" method="POST">
+                    <form action="{{ route('anggota.destroy', $data->id) }}" method="POST">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
                              <a class="btn btn-info" href="{{ route('anggota.show',$data->id) }}">Show</a>
