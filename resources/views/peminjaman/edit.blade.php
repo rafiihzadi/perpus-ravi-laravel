@@ -32,7 +32,7 @@
                 <select class="js-example-basic-single" style="width: 100%;" name="id_buku" id="id_buku">
                     <option disabled value>Pilih Peminjaman</option>
                     @foreach($peminjaman as $item)
-                        <option value="{{ $item->id }}" @if(old('id_buku') == $item->id) selected @endif>{{$item->nama}}</option>
+                    <option value="{{ @$item->id }}" @if(old('id_buku') == @$item->id) selected @endif>{{@$item->nama}}</option>
                     @endforeach
                 </select>
             </div>
@@ -42,7 +42,7 @@
             <select class="js-example-basic-single" style="width: 100%;" name="id_anggota" id="id_anggota">
             <option disabled value>Pilih Anggota</option>
                 @foreach($anggota as $item)
-                        <option value="{{ $item->id }}" @if(old('id_anggota') == $item->id) selected @endif>{{$item->nama}}</option>
+                    <option value="{{ @$item->id }}" @if(old('id_anggota') == @$item->id) selected @endif>{{@$item->nama}}</option>
                 @endforeach 
                 </select>          
             </div>
