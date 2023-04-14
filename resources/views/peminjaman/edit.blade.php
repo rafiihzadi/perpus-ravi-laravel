@@ -24,20 +24,25 @@
     @method('PUT')
 
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nama Peminjaman:</strong>
+                
             </div>
-                <div class="form-group">
-                <select class="js-example-basic-single" style="width: 100%;" name="id_buku" id="id_buku">
-                    <option disabled value>Pilih Peminjaman</option>
-                    @foreach($peminjaman as $item)
+            <div class="form-group">
+            <select class="js-example-basic-single" style="width: 100%;" name="id_buku" id="id_buku">
+            <option disabled value>Pilih Nama_Peminjaman</option>
+                @foreach($buku as $item)
                     <option value="{{ @$item->id }}" @if(old('id_buku') == @$item->id) selected @endif>{{@$item->nama}}</option>
-                    @endforeach
-                </select>
+                @endforeach 
+                </select>          
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Nama Anggota:</strong>
+                
+            </div>
             <div class="form-group">
             <select class="js-example-basic-single" style="width: 100%;" name="id_anggota" id="id_anggota">
             <option disabled value>Pilih Anggota</option>
@@ -47,6 +52,8 @@
                 </select>          
             </div>
         </div>
+    </div>
+</div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Pinjam:</strong>
