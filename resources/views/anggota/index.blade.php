@@ -41,18 +41,16 @@
                     <th style="text-align:center;">Alamat</th>
                     <th style="text-align:center;">No.Telepon</th>
                     <th style="text-align:center;">Email</th>
-                    <th style="text-align:center;">Jumlah Buku</th>
                     <th style="text-align:center">Opsi</th>
                     
                 </tr>
                 @foreach($anggota as $data)
                 <tr>
                     <td style="text-align:center">{{ $loop->iteration }}</td>
-                    <td style="text-align:center">{{ $data->nama }}</td>
+                    <td style="text-align:center">{{ @$data->nama }}</td>
                     <td style="text-align:center">{{ $data->alamat }}</td>
                     <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>
                     <td style="text-align:center">{{ $data->email }}</td>
-                    <td style="text-align:center"></td>
                     <td style="text-align:center">
                    
                         

@@ -26,14 +26,25 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Buku:</strong>
-                <input type="text" name="nama buku" class="form-control" value="{{ $peminjaman->buku }}">
+                <strong>Nama Peminjaman:</strong>
+            </div>
+                <div class="form-group">
+                <select class="js-example-basic-single" style="width: 100%;" name="id_buku" id="id_buku">
+                    <option disabled value>Pilih Peminjaman</option>
+                    @foreach($peminjaman as $item)
+                        <option value="{{ $item->id }}" @if(old('id_buku') == $item->id) selected @endif>{{$item->nama}}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Nama Anggota:</strong>
-                <input type="text" name="nama anggota" class="form-control" value="{{ $peminjaman->anggota }}">
+            <select class="js-example-basic-single" style="width: 100%;" name="id_anggota" id="id_anggota">
+            <option disabled value>Pilih Anggota</option>
+                @foreach($anggota as $item)
+                        <option value="{{ $item->id }}" @if(old('id_anggota') == $item->id) selected @endif>{{$item->nama}}</option>
+                @endforeach 
+                </select>          
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

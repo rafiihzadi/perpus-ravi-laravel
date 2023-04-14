@@ -24,17 +24,11 @@
 
         @csrf
 
-     <div class="row">
+        <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Nama Anggota</strong>
-                </div>
-                <div class="form-group" style="height: auto;">
-                    <select class="js-example-basic-single" style="width: 100%;" name="anggota" id="anggota">
-                    @foreach($anggota as $item)
-                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
-                    @endforeach
-                    </select>
+                <input type="text" name="nama" class="form-control" placeholder="" autofocus>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -59,7 +53,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <button type="submit" class="btn btn-primary">Simpan</button>
 
-            <a href="{{ url('/anggota') }}" class="btn btn-warning">Kembali</a>
+            <a href="{{ url('/index') }}" class="btn btn-warning">Kembali</a>
         </div>
     </form>
 </div>

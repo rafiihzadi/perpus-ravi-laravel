@@ -80,10 +80,12 @@ class PeminjamanController extends Controller
      */
     public function edit($id)
     {
-        $buku = Buku::find($id);
-        // $anggota = Anggota::all();
+        $peminjman = Peminjaman::find($id);
+        $buku = Buku::all();
+        $anggota = Anggota::all();
 
-        return view('peminjaman.edit', compact('buku'));
+        return view('peminjaman.edit', ['peminjaman' =>$peminjman]);
+
     }
 
     /**
