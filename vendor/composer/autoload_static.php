@@ -558,8 +558,6 @@ class ComposerStaticInit5b640a322c3a11e6ea26b395f046cbf8
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\Anggota' => __DIR__ . '/../..' . '/app/Models/Anggota.php',
-        'App\\Models\\Pegawai' => __DIR__ . '/../..' . '/app/Models/Pegawai.php',
-        'App\\Models\\Penulis' => __DIR__ . '/../..' . '/app/Models/Penulis.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',

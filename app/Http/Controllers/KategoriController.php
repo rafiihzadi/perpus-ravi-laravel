@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kategori;
+use PDF;
 
 class KategoriController extends Controller
 {
@@ -102,5 +103,13 @@ class KategoriController extends Controller
         $kategori->delete();
 
         return redirect()->route('kategori.index')->with('success','Kategori berhasil dihapus');
+    }
+    public function pdf()
+    {
+        $kategori = Kategori::get();
+ 
+        $pdf = PDF::loadview('kategori.kategori-pdf',['kategori'=>$kategori]);
+
+        return $pdf->stream();
     }
 }

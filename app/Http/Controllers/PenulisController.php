@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Penulis;
+use PDF;
 
 class PenulisController extends Controller
 {
@@ -106,5 +107,13 @@ class PenulisController extends Controller
         $penulis->delete();
 
         return redirect()->route('penulis.index')->with('success', 'Penulis berhasil dihapus!');
+    }
+    public function pdf()
+    {
+        $penulis = Penulis::get();
+ 
+        $pdf = PDF::loadview('penulis.penulis-pdf',['penulis'=>$penulis]);
+
+        return $pdf->stream();
     }
 }

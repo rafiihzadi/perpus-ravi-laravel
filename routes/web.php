@@ -65,6 +65,7 @@ Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store')
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::resource('penulis', PenulisController::class);
+Route::get('/pdf-penulis', [PenulisController::class, 'pdf']);
 Route::get('/create-penulis', [PenulisController::class, 'create']);
 Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penulis.store');
 
@@ -72,6 +73,7 @@ Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penuli
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
 Route::resource('penerbit', PenerbitController::class);
+Route::get('/pdf', [PenerbitController::class, 'pdf']);
 Route::get('/create-penerbit', [PenerbitController::class, 'create']);
 Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
 

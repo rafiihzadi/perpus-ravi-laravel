@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Penerbit;
+use PDF;
+
 
 class PenerbitController extends Controller
 {
@@ -106,5 +108,14 @@ class PenerbitController extends Controller
         $penerbit->delete();
 
         return redirect()->route('penerbit.index')->with('success','Penerbit berhasil dihapus');
+    }
+    
+    public function pdf()
+    {
+        $penerbit = Penerbit::get();
+ 
+        $pdf = PDF::loadview('penerbit.penerbit-pdf',['penerbit'=>$penerbit]);
+
+        return $pdf->stream();
     }
 }
