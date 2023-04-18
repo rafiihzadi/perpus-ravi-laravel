@@ -7,6 +7,7 @@ use App\Models\Buku;
 use App\Models\Penerbit;
 use App\Models\Penulis;
 use App\Models\Kategori;
+use PDF;
 
 class BukuController extends Controller
 {
@@ -135,4 +136,14 @@ class BukuController extends Controller
 
         return redirect()->route('buku.index')->with('success', 'Buku berhasil dihapus!');
     }
+
+    public function pdf()
+    {
+        $buku = Buku::get();
+ 
+        $pdf = PDF::loadview('buku.buku-pdf',['buku'=>$buku]);
+
+        return $pdf->stream();
+    }
+
 }

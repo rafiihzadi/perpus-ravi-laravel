@@ -57,6 +57,7 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 //Buku
 Route::get('/buku', [BukuController::class, 'index'])->name('buku.index');
 Route::resource('buku', BukuController::class);
+Route::get('/pdf', [BukuController::class, 'pdf']);
 Route::get('/create-buku', [BukuController::class, 'create']);
 Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
 
