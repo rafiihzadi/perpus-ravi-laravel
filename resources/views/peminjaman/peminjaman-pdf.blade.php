@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
-	<title>Membuat Laporan PDF Dengan DOMPDF Laravel</title>
+<title>Membuat Laporan PDF Dengan DOMPDF Laravel</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -12,7 +12,7 @@
 		}
 	</style>
 	<center>
-		<h5>Laporan Penerbit PDF</h4>
+		<h5>Laporan Peminjman PDF</h4>
 		<h6><a target="_blank" href="https://www.malasngoding.com/membuat-laporan-…n-dompdf-laravel/"></a></h5>
 	</center>
  
@@ -20,22 +20,26 @@
 		<thead>
 		<tr>
 			<th>No</th>
-            <th>Nama</th>
-            <th>Alamat</th>
-            <th>No.Telepon</th>
-            <th width="100px">Email</th>
-            <th>Jumlah Buku</th>
+            <th>Nama Buku</th>
+            <th>Nama Anggota</th>
+            <th>Tanggal Pinjam</th>
+            <th>Tanggal Kembali</th>
+            <th>Denda	</th>
+            <th width="100px">Status</th>
+            <th>Opsi</th>
 		</tr>
 		</thead>
         <tbody>
 			@php $i=1 @endphp
-			@foreach($penerbit as $value)
+			@foreach($peminjaman as $value)
 		<tr>
 			<td>{{ $i++ }}</td>
-            <td>{{ $value->nama }}</td>
-            <td>{{ $value->alamat }}</td>
-            <td>{{ @$value->telepon->telepon }}</td>
-            <td>{{ $value->email }}</td>
+            <td>{{ $value->nama_buku }}</td>
+            <td>{{ $value->nama_anggota }}</td>
+            <td>{{ @$value->tanggal_pinjam->tanggal_pinjam }}</td>
+            <td>{{ @$value->tanggal_kembali->tanggal_kembali }}</td>
+            <td>{{ @$value->denda->denda }}</td>
+            <td>{{ $value->status }}</td>
             <td><img src="./image/{{ $value->image }}" width="150px"></td>
 		</tr>
 			@endforeach
@@ -43,4 +47,4 @@
 	</table>
  
 </body>
-</html>
+</html> -->
