@@ -26,7 +26,7 @@
             <a href="{{url('create-penerbit')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
-            <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat">
+            <a href="{{ url('pdf-penerbit') }}" class="btn btn-danger btn-flat">
                 <i class="fa fa-file-pdf"></i> Export PDF
             </a>
             <a href="{{ url('export data') }}" class="btn btn-success btn-flat">
@@ -62,7 +62,6 @@
                              <a class="btn btn-primary" href="{{ route('penerbit.edit',$data->id) }}">Edit</a>
                             <button type="submit" class="btn btn-danger">Hapus</button>
                     </td>
-
                 </tr>
                 
                 @endforeach
