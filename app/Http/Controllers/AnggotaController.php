@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Anggota;
+use PDF;
 
 class AnggotaController extends Controller
 {
@@ -107,6 +108,16 @@ class AnggotaController extends Controller
         $anggota->delete();
 
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil dihapus!');
+
+    }
+
+    public function pdf()
+    {
+        $anggota = Anggota::get();
+ 
+        $pdf = PDF::loadview('anggota.anggota-pdf',['anggota'=>$anggota]);
+
+        return $pdf->stream();
     }
 }
 

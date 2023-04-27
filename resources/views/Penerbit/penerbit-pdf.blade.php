@@ -34,9 +34,9 @@
 			<td>{{ $i++ }}</td>
             <td>{{ $value->nama }}</td>
             <td>{{ $value->alamat }}</td>
-            <td>{{ @$value->telepon->telepon }}</td>
+            <td>{{ @$value->telepon }}</td>
             <td>{{ $value->email }}</td>
-            <td><img src="./image/{{ $value->image }}" width="150px"></td>
+            <td><img src=></td>
 		</tr>
 			@endforeach
 		</tbody>

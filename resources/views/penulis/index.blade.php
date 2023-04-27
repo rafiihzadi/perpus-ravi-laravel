@@ -26,7 +26,7 @@
             <a href="{{ route('penulis.create')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
-            <a href="{{ url('pdf') }}" class="btn btn-danger btn-flat" target="_blank">
+            <a href="{{ url('pdf-penulis') }}" class="btn btn-danger btn-flat" target="_blank">
                 <i class="fa fa-file-pdf"></i> Export PDF
             </a>
             <a href="{{ url('export data') }}" class="btn btn-success btn-flat">

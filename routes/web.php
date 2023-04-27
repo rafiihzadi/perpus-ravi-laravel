@@ -65,7 +65,7 @@ Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store')
 //Penulis
 Route::get('/penulis', [PenulisController::class, 'index'])->name('penulis.index');
 Route::resource('penulis', PenulisController::class);
-Route::get('/pdf', [PenulisController::class, 'pdf']);
+Route::get('/pdf-penulis', [PenulisController::class, 'pdf']);
 Route::get('/create-penulis', [PenulisController::class, 'create']);
 Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penulis.store');
 
@@ -82,6 +82,7 @@ Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('pene
 //Kategori
 Route::get('/kategori', [KategoriController::class, 'index'])->name('kategori.index');
 Route::resource('kategori', KategoriController::class);
+Route::get('/pdf-kategori', [KategoriController::class, 'pdf']);
 Route::get('/create-kategori', [KategoriController::class, 'create']);
 Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
 
@@ -89,12 +90,14 @@ Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kate
 //Peminjaman
 Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman.index');
 Route::resource('peminjaman', PeminjamanController::class);
+Route::get('/pdf-peminjaman', [PeminjamanController::class, 'pdf']);
 Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);
 Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
 
 //Anggota
 Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
 Route::resource('anggota', AnggotaController::class);
+Route::get('/pdf-anggota', [AnggotaController::class, 'pdf']);
 Route::get('/create-anggota', [AnggotaController::class, 'create']);
 Route::post('/store-anggota', [AnggotaController::class, 'store'])->name('anggota.store');
 

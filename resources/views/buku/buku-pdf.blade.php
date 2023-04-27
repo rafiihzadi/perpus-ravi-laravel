@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
 <title>Membuat Laporan PDF Dengan DOMPDF Laravel</title>
-=======
+
 	<title>Laporan PDF Buku</title>
->>>>>>> 453560701fb8f0e4901de1428e001bd3dd857544
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -40,11 +38,11 @@
 			<td>{{ $i++ }}</td>
             <td>{{ $value->nama }}</td>
             <td>{{ $value->tahun_terbit }}</td>
-            <td>{{ @$value->author->nama }}</td>
-            <td>{{ @$value->publisher->nama }}</td>
-            <td>{{ $value->kategori->kategori }}</td>
+            <td>{{ @$value->penulis->nama }}</td>
+            <td>{{ @$value->penerbit->nama }}</td>
+            <td>{{ @$value->kategori->nama}}</td>
             <td>{{ $value->sinopsis }}</td>
-            <td><img src="./image/{{ $value->image }}" width="150px"></td>
+            <td><img src=></td>
 		</tr>
 			@endforeach
 		</tbody>

@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Membuat Laporan PDF Dengan DOMPDF Laravel</title>
@@ -34,17 +34,18 @@
 			@foreach($peminjaman as $value)
 		<tr>
 			<td>{{ $i++ }}</td>
-            <td>{{ $value->nama_buku }}</td>
-            <td>{{ $value->nama_anggota }}</td>
-            <td>{{ @$value->tanggal_pinjam->tanggal_pinjam }}</td>
-            <td>{{ @$value->tanggal_kembali->tanggal_kembali }}</td>
-            <td>{{ @$value->denda->denda }}</td>
+            <td>{{ @$value->buku->nama }}</td>
+            <td>{{ @$value->anggota->nama }}</td>
+            <td>{{ $value->tanggal_pinjam }}</td>
+            <td>{{ $value->tanggal_kembali }}</td>
+            <td>{{ $value->denda}}</td>
             <td>{{ $value->status }}</td>
-            <td><img src="./image/{{ $value->image }}" width="150px"></td>
+			<td><img src=></td>
+
 		</tr>
 			@endforeach
 		</tbody>
 	</table>
  
 </body>
-</html> -->
+</html>

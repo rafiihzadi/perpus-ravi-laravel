@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Peminjaman;
 use App\Models\Buku;
 use App\Models\Anggota;
+use PDF;
 
 class PeminjamanController extends Controller
 {
@@ -123,6 +124,15 @@ class PeminjamanController extends Controller
         $peminjaman->delete();
 
         return redirect()->route('peminjaman.index')->with('success', 'Peminjaman berhasil dihapus!');
+    }
+
+    public function pdf()
+    {
+        $peminjaman = Peminjaman::get();
+ 
+        $pdf = PDF::loadview('peminjaman.peminjaman-pdf',['peminjaman'=>$peminjaman]);
+
+        return $pdf->stream();
     
     }
     

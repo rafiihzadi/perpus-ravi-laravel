@@ -26,7 +26,7 @@
             <a href="{{url('create-penerbit')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
-            <a href="{{ url('pdf-penerbit') }}" class="btn btn-danger btn-flat">
+            <a href="{{ url('pdf-penerbit') }}" class="btn btn-danger btn-flat" target="_blank">
                 <i class="fa fa-file-pdf"></i> Export PDF
             </a>
             <a href="{{ url('export data') }}" class="btn btn-success btn-flat">
