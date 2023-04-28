@@ -60,6 +60,7 @@ Route::resource('buku', BukuController::class);
 Route::get('/pdf-buku', [BukuController::class, 'pdf']);
 Route::get('/create-buku', [BukuController::class, 'create']);
 Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
+Route::get('/export-excel', [BukuController::class, 'exportExcel']);
 
 
 //Penulis

@@ -8,6 +8,9 @@ use App\Models\Penerbit;
 use App\Models\Penulis;
 use App\Models\Kategori;
 use PDF;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 
 class BukuController extends Controller
 {
@@ -144,6 +147,40 @@ class BukuController extends Controller
         $pdf = PDF::loadview('buku.buku-pdf',['buku'=>$buku]);
 
         return $pdf->stream();
+    }
+
+    public function exportExcel()
+    {
+
+        $data = Buku::all();
+
+        $spreadsheet = new Spreadsheet();
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellValue('A1', 'Data Buku');
+
+        $sheet->setCellValue('A3', 'No');
+        $sheet->setCellValue('B3', 'Judul Buku');
+        $sheet->setCellValue('C3', 'Tahun Terbit');
+        $sheet->setCellValue('D3', 'Penulis');
+        $sheet->setCellValue('E3', 'Penerbit');
+        $sheet->setCellValue('F3', 'Kategori');
+        $sheet->setCellValue('G3', 'sinopsis');
+
+        $row = 2;
+        $i = 1;
+        foreach($data as $buku){
+            $sheet->setCellValue('A' . $row, $i++);
+            $sheet->setCellValue('B' . $row, $buku->nama);
+            $sheet->setCellValue('B' . $row, $buku->tahun_terbit);
+        }
+
+        $path = '../files/';
+        $filename = time() . '_Export_Data_Buku.xlsx';
+        $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+        $writer->save($path . $filename);
+        return $writer;
     }
 
 }
