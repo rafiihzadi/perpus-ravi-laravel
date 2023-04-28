@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\Penulis;
 use PDF;
 
+use App\Exports\PenulisExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
+
 class PenulisController extends Controller
 {
     /**
@@ -115,5 +119,11 @@ class PenulisController extends Controller
         $pdf = PDF::loadview('penulis.penulis-pdf',['penulis'=>$penulis]);
 
         return $pdf->stream();
+    }
+ 
+	public function export_excel()
+	{
+		return Excel::download(new PenulisExport, 'penulis.xlsx');
+	
     }
 }

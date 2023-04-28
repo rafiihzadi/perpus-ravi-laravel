@@ -68,6 +68,7 @@ Route::resource('penulis', PenulisController::class);
 Route::get('/pdf-penulis', [PenulisController::class, 'pdf']);
 Route::get('/create-penulis', [PenulisController::class, 'create']);
 Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penulis.store');
+Route::get('/expor-penulis', [PenulisController::class, 'excel']);
 
 
 //Penerbit
