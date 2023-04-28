@@ -34,7 +34,7 @@
 			<td>{{ $i++ }}</td>
             <td>{{ $value->nama }}</td>
             <td>{{ $value->alamat }}</td>
-            <td>{{ @$value->telepon->telepon }}</td>
+            <td>{{ @$value->telepon }}</td>
             <td>{{ $value->email }}</td>
             <td><img src=></td>
 		</tr>
