@@ -11,6 +11,9 @@ use PDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 use PhpOffice\PhpSpreadsheet\IOFactory;
+use App\Exports\BukuExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class BukuController extends Controller
 {
@@ -22,13 +25,6 @@ class BukuController extends Controller
     public function index()
     {
         $buku = Buku::all();
-
-        $book = Buku::with('penulis', 'penerbit', 'kategori')->paginate(10);
-
-        return view ('buku.index',['buku'=>$buku]);
-
-        return view('buku.index',['buku'=>$buku]);
-
 
         $book = Buku::with('penulis', 'penerbit', 'kategori')->paginate(10);
 
@@ -151,6 +147,8 @@ class BukuController extends Controller
 
     public function exportExcel()
     {
+		return Excel::download(new BukuExport, 'buku.xlsx');
+	
 
         $data = Buku::all();
 
