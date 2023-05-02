@@ -17,8 +17,8 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <!-- Add icons to the links using the .nav-icon class
             with font-awesome or any other icon font library -->
-      <li class="nav-item menu-open">
-        <a href="{{ url('/dashboard') }}" class="nav-link active">
+      <li class="nav-item">
+        <a href="{{ url('/dashboard') }}" class="nav-link">
           <i class="nav-icon fa fa-tachometer-alt"></i>
           <p>
             Dashboard
@@ -27,7 +27,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="{{ url('/buku') }}" class="nav-link">
+        <a href="{{ url('/buku') }}" class="nav-link" id="nav-link">
           <i class="fa-solid fa-book"></i>
           <p>
             Data Buku
@@ -133,3 +133,21 @@
       </li>
   </nav>
 </div>
+
+<script type="text/javascript">
+$(function () {
+    var url = window.location;
+    // for single sidebar menu
+    $('ul.nav-sidebar a').filter(function () {
+        return this.href == url;
+    }).addClass('active');
+
+    // for sidebar menu and treeview
+    $('ul.nav-treeview a').filter(function () {
+        return this.href == url;
+    }).parentsUntil(".nav-sidebar > .nav-treeview")
+        .css({'display': 'block'})
+        .addClass('menu-open').prev('a')
+        .addClass('active');
+});
+</script>
