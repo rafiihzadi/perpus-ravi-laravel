@@ -37,7 +37,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="{{ url('/penulis') }}" class="nav-link">
+        <a href="{{ url('/penulis') }}" class="nav-link" id="nav-link">
           <i class="fa fa-pencil-alt"></i>
           <p>
             Penulis
@@ -47,7 +47,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="{{ url('/penerbit') }}" class="nav-link">
+        <a href="{{ url('/penerbit') }}" class="nav-link" id="nav-link">
           <i class="fa fa-building"></i>
           <p>
               Penerbit
@@ -57,7 +57,7 @@
       </li>
 
       <li class="nav-item">
-        <a href="{{url('/kategori') }}" class="nav-link">
+        <a href="{{url('/kategori') }}" class="nav-link" id="nav-link">
           <i class="ion ion-pie-graph"></i>
           <p>
             Kategori
@@ -66,7 +66,7 @@
       </li>
         
       <li class="nav-item">
-        <a href="{{url('/peminjaman') }}" class="nav-link">
+        <a href="{{url('/peminjaman') }}" class="nav-link" id="nav-link">
           <i class="fa-solid fa-bookmark"></i>
           <p>
             Peminjaman
@@ -76,7 +76,7 @@
 
         
       <li class="nav-item">
-        <a href="{{url('/anggota') }}" class="nav-link">
+        <a href="{{url('/anggota') }}" class="nav-link" id="nav-link">
           <i class="fa-solid fa-user"></i>
           <p>
             Anggota

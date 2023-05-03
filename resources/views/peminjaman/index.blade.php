@@ -29,7 +29,7 @@
             <a href="{{ url('pdf-peminjaman') }}" class="btn btn-danger btn-flat" target="_blank">
                 <i class="fa fa-file-pdf"></i> Export PDF
             </a>
-            <a href="{{ url('export-excel') }}" class="btn btn-success btn-flat" target="_blank">
+            <a href="{{ url('export-peminjaman') }}" class="btn btn-success btn-flat" target="_blank">
                 <i class="fa fa-file-excel"></i> Export Excel
             </a>
         </div>
@@ -43,6 +43,7 @@
                     <th style="text-align:center;">Tanggal Kembali</th>
                     <th style="text-align:center">Denda</th>
                     <th width="200px" style="text-align: center;">Status</th>
+
                     <th width="250px" style="text-align: center;">Opsi</th>
                 </tr>
                 @foreach($peminjaman as $data)

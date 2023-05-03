@@ -29,7 +29,7 @@
             <a href="{{ url('pdf-kategori') }}" class="btn btn-danger btn-flat" target="_blank">
                 <i class="fa fa-file-pdf"></i> Export PDF
             </a>
-            <a href="{{ url('export-excel') }}" class="btn btn-success btn-flat" target="_blank">
+            <a href="{{ url('export-kategori') }}" class="btn btn-success btn-flat" target="_blank">
                 <i class="fa fa-file-excel"></i> Export Excel
             </a>
         </div>
