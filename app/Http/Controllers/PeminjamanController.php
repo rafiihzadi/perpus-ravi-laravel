@@ -7,6 +7,11 @@ use App\Models\Peminjaman;
 use App\Models\Buku;
 use App\Models\Anggota;
 use PDF;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use App\Exports\PeminjamanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PeminjamanController extends Controller
 {
@@ -134,6 +139,41 @@ class PeminjamanController extends Controller
 
         return $pdf->stream();
     
+
     }
-    
+    public function exportExcel()
+    {
+        return Excel::download(new PeminjamanExport,'peminjaman.xlsx');
+
+        $data = Peminjaman::all();
+
+        $spreadsheet = new Spreadsheet();
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellvalue('Al', 'Data Peminjaman');
+
+        $sheet->setCellvalue('A3', 'No');
+        $sheet->setCellvalue('B3', 'Nama Buku');
+        $sheet->setCellvalue('C3', 'Nama Anggota');
+        $sheet->setCellvalue('D3', 'Tanggal Pinjam');
+        $sheet->setCellvalue('F3', 'Tanggal Kembali');
+        $sheet->setCellvalue('G3', 'Denda');
+        $sheet->setCellvalue('H3', 'Status');
+        $sheet->setCellvalue('I3', 'Opsi');
+
+        $row = 2;
+        $i = 1;
+        foreach($data as $peminjaman){
+            $sheet->setCellValue('A' . $row, $i++);
+            $sheet->setCellValue('B' . $row, $penerbit->nama);
+            $sheet->setCellValue('B' . $row, $penerbit->nama_anggota);
+        }
+
+        $path = '../files/';
+        $filename = time() . '_Export_Data_Peminjaman.xlsx';
+        $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+        $writer->save($path . $filename);
+        return $writer;
+}
 }

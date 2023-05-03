@@ -60,7 +60,7 @@ Route::resource('buku', BukuController::class);
 Route::get('/pdf-buku', [BukuController::class, 'pdf']);
 Route::get('/create-buku', [BukuController::class, 'create']);
 Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
-Route::get('/export-excel', [BukuController::class, 'exportExcel']);
+Route::get('/export-buku', [BukuController::class, 'exportExcel']);
 
 
 //Penulis
@@ -78,6 +78,8 @@ Route::resource('penerbit', PenerbitController::class);
 Route::get('/pdf-penerbit', [PenerbitController::class, 'pdf']);
 Route::get('/create-penerbit', [PenerbitController::class, 'create']);
 Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
+Route::get('/export-excel', [PenerbitController::class, 'exportExcel']);
+
 
 
 
@@ -87,6 +89,8 @@ Route::resource('kategori', KategoriController::class);
 Route::get('/pdf-kategori', [KategoriController::class, 'pdf']);
 Route::get('/create-kategori', [KategoriController::class, 'create']);
 Route::post('/store-kategori', [KategoriController::class, 'store'])->name('kategori.store');
+Route::get('/export-excel', [KategoriController::class, 'exportExcel']);
+
 
 
 //Peminjaman
@@ -95,6 +99,8 @@ Route::resource('peminjaman', PeminjamanController::class);
 Route::get('/pdf-peminjaman', [PeminjamanController::class, 'pdf']);
 Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);
 Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
+Route::get('/export-excel', [PeminjamanController::class, 'exportExcel']);
+
 
 //Anggota
 Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota.index');
@@ -102,5 +108,7 @@ Route::resource('anggota', AnggotaController::class);
 Route::get('/pdf-anggota', [AnggotaController::class, 'pdf']);
 Route::get('/create-anggota', [AnggotaController::class, 'create']);
 Route::post('/store-anggota', [AnggotaController::class, 'store'])->name('anggota.store');
+Route::get('/export-excel', [AnggotaController::class, 'exportExcel']);
+
 
 

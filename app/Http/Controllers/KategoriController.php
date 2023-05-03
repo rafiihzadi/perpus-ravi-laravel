@@ -5,6 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kategori;
 use PDF;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use App\Exports\KategoriExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Controller;
 
 class KategoriController extends Controller
 {
@@ -112,4 +118,38 @@ class KategoriController extends Controller
 
         return $pdf->stream();
     }
+    public function exportExcel()
+    {
+        return Excel::download(new KategoriExport,'kategori.xlsx');
+
+        $data = Kategori::all();
+
+        $spreadsheet = new Spreadsheet();
+
+        $sheet = $spreadsheet->getActiveSheet();
+
+        $sheet->setCellvalue('Al', 'Data Kategori');
+
+        $sheet->setCellvalue('A3', 'No');
+        $sheet->setCellvalue('B3', 'Nama');
+        $sheet->setCellvalue('C3', 'Alamat');
+        $sheet->setCellvalue('D3', 'No.Telepon');
+        $sheet->setCellvalue('F3', 'Email');
+        $sheet->setCellvalue('G3', 'Jumlah Buku');
+        $sheet->setCellvalue('H3', 'Opsi');
+
+        $row = 2;
+        $i = 1;
+        foreach($data as $penerbit){
+            $sheet->setCellValue('A' . $row, $i++);
+            $sheet->setCellValue('B' . $row, $penerbit->nama);
+            $sheet->setCellValue('B' . $row, $penerbit->Alamat);
+        }
+
+        $path = '../files/';
+        $filename = time() . '_Export_Data_Penerbit.xlsx';
+        $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
+        $writer->save($path . $filename);
+              return $writer;
+}
 }

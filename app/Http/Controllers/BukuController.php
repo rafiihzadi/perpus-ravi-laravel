@@ -165,6 +165,8 @@ class BukuController extends Controller
         $sheet->setCellValue('E3', 'Penerbit');
         $sheet->setCellValue('F3', 'Kategori');
         $sheet->setCellValue('G3', 'sinopsis');
+        $sheet->setCellValue('H3', 'sampul');
+
 
         $row = 2;
         $i = 1;
