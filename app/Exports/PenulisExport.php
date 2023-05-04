@@ -41,8 +41,8 @@ class PenulisExport implements FromCollection, WithHeadings, ShouldAutoSize,  Wi
        return [
          'Nama',
          'Alamat',
-         'telepon',
-         'email',
+         'Telepon',
+         'Email',
        ];
     }
 
@@ -71,7 +71,7 @@ class PenulisExport implements FromCollection, WithHeadings, ShouldAutoSize,  Wi
         return [
             AfterSheet::class    => function(AfterSheet $event)
             {
-                $event->sheet->getStyle('A1:D4')->ApplyFromArray([
+                $event->sheet->getStyle('A1:D2')->ApplyFromArray([
                     'borders' => [ 
                         'allBorders' =>[
                             'borderStyle' => 

@@ -29,9 +29,9 @@ class AnggotaExport implements FromCollection, WithHeadings, ShouldAutoSize,  Wi
     public function map($anggota):array
     {
         return [
-            $anggota->nama_anggota,
+            $anggota->nama,
             $anggota->alamat,
-            $anggota->no_telepon,
+            $anggota->telepon,
             $anggota->email,
         ];
     }
@@ -39,9 +39,9 @@ class AnggotaExport implements FromCollection, WithHeadings, ShouldAutoSize,  Wi
     public function headings(): array
     {
        return [
-         'Nama Anggota',
+         'Nama',
          'Alamat',
-         'No.Telepon',
+         'Telepon',
          'Email',
        ];
     }
@@ -61,7 +61,7 @@ class AnggotaExport implements FromCollection, WithHeadings, ShouldAutoSize,  Wi
         return[
            'nama',
            'alamat',
-           'no.telepon',
+           'telepon',
            'email', 
         ];
     }
@@ -71,7 +71,7 @@ class AnggotaExport implements FromCollection, WithHeadings, ShouldAutoSize,  Wi
         return [
             AfterSheet::class    => function(AfterSheet $event)
             {
-                $event->sheet->getStyle('A1:D4')->ApplyFromArray([
+                $event->sheet->getStyle('A1:D5')->ApplyFromArray([
                     'borders' => [ 
                         'allBorders' =>[
                             'borderStyle' => 

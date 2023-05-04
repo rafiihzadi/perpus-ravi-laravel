@@ -29,8 +29,8 @@ class PeminjamanExport implements FromCollection, WithHeadings, ShouldAutoSize, 
     public function map($peminjaman):array
     {
         return [
-            $peminjaman->nama_buku,
-            $peminjaman->nama_anggota,
+            $peminjaman->buku->nama,
+            $peminjaman->anggota->nama,
             $peminjaman->tanggal_pinjam,
             $peminjaman->tanggal_kembali,
             $peminjaman->denda,
@@ -47,7 +47,7 @@ class PeminjamanExport implements FromCollection, WithHeadings, ShouldAutoSize, 
          'Tanggal Pinjam',
          'Tanggal Kembali',
          'Denda',
-         'Id Sinopsis',
+         'Sinopsis',
          'Status',
        ];
     }
@@ -80,7 +80,7 @@ class PeminjamanExport implements FromCollection, WithHeadings, ShouldAutoSize, 
         return [
             AfterSheet::class    => function(AfterSheet $event)
             {
-                $event->sheet->getStyle('A1:D4')->ApplyFromArray([
+                $event->sheet->getStyle('A1:G7')->ApplyFromArray([
                     'borders' => [ 
                         'allBorders' =>[
                             'borderStyle' => 
