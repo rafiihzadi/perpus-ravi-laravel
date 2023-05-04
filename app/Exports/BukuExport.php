@@ -29,13 +29,12 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
     public function map($buku):array
     {
         return [
-            $buku->judul_buku,
+            $buku->nama,
             $buku->tahun_terbit,
-            $buku->id_penulis,
-            $buku->id_penerbit,
-            $buku->id_kategori,
-            $buku->id_sinopsis,
-            $buku->sampul,
+            $buku->penulis->nama,
+            $buku->penerbit->nama,
+            $buku->kategori->nama,
+            $buku->sinopsis,
         ];
     }
 
@@ -44,11 +43,10 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
        return [
          'Nama Buku',
          'Tahun Terbit',
-         'Id Penulis',
-         'Id Penerbit',
-         'Id Kategori',
-         'Id Sinopsis',
-         'Sampul',
+         'Penulis',
+         'Penerbit',
+         'Kategori',
+         'Sinopsis',
        ];
     }
 
@@ -67,10 +65,10 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
         return[
             'nama buku',
             'tahun terbit',
-            'id penulis',
-            'id penerbit',
-            'id kategori',
-            'id sinopsis',
+            'penulis',
+            'penerbit',
+            'kategori',
+            'sinopsis',
             'sampul',
         ];
     }
@@ -80,7 +78,7 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
         return [
             AfterSheet::class    => function(AfterSheet $event)
             {
-                $event->sheet->getStyle('A1:D4')->ApplyFromArray([
+                $event->sheet->getStyle('A1:F4')->ApplyFromArray([
                     'borders' => [ 
                         'allBorders' =>[
                             'borderStyle' => 
