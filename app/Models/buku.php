@@ -31,6 +31,4 @@ class Buku extends Model
     {
         return $this->belongsTo(Penerbit::class, 'id_penerbit', 'id');
     }
-
-
 }
