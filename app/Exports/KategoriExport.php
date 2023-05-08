@@ -63,7 +63,7 @@ class KategoriExport implements FromCollection, WithHeadings, ShouldAutoSize,  W
         return [
             AfterSheet::class    => function(AfterSheet $event)
             {
-                $event->sheet->getStyle('A1')->ApplyFromArray([
+                $event->sheet->getStyle('A3')->ApplyFromArray([
                     'borders' => [ 
                         'allBorders' =>[
                             'borderStyle' => 

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Book;
+use App\Models\Buku;
 
 class Penerbit extends Model
 {
@@ -19,6 +19,16 @@ class Penerbit extends Model
     {
         return $this->hasMany('book::class');
     }
+
+      public function getJumlahBuku()
+    {
+        $query = Buku::query();
+
+        $query->where('id_penerbit', '=', $this->id);
+
+        return $query->count();
+    }
+
 
 
 }

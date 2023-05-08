@@ -52,7 +52,7 @@
                     <td style="text-align:center">{{ $data->alamat }}</td>
                     <td style="text-align:center" style="text-align:center">{{ $data->telepon }}</td>
                     <td style="text-align:center">{{ $data->email }}</td>
-                    <td style="text-align:center"></td>
+                    <td style="text-align:center">{{ $data->getJumlahBuku() }}</td>
                     <td style="text-align:center">
                     
                     <form action="{{ route('penerbit.destroy', $data->id) }}" method="POST">

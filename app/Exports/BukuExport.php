@@ -41,7 +41,7 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
     public function headings(): array
     {
        return [
-         'Nama Buku',
+         'Judul Buku',
          'Tahun Terbit',
          'Penulis',
          'Penerbit',
@@ -63,13 +63,12 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
     public function model(array $row)
     {
         return[
-            'nama buku',
+            'judul buku',
             'tahun terbit',
             'penulis',
             'penerbit',
             'kategori',
             'sinopsis',
-            'sampul',
         ];
     }
 
