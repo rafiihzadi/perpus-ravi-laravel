@@ -23,7 +23,7 @@ class Kategori extends Model
     {
         $query = Buku::query();
 
-        $query->where('id_kategori', '=', $this->id);
+        $query->where('id_ka', '=', $this->id);
 
         return $query->count();
     }
