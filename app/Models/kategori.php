@@ -19,6 +19,14 @@ class Kategori extends Model
     {
         return $this->hasMany('book::class');
     }
+    public function getJumlahBuku()
+    {
+        $query = Buku::query();
+
+        $query->where('id_kategori', '=', $this->id);
+
+        return $query->count();
+    }
 
 
 }

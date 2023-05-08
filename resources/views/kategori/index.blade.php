@@ -35,15 +35,19 @@
         </div>
         <div style="overflow: auto">
             <table class="table table-bordered table-condensed">
-                <th style="text-align:center">nama</th>
-                <th style="text-align:center">opsi</th>
+                <tr>
+                <th style="text-align:center;">No</th>
+                <th style="text-align:center">Nama</th>
+                <th style="text-align:center;">Jumlah Buku</th>
+                <th style="text-align:center">Opsi</th>
 
                 </tr>
                 @foreach($kategori as $data)
                 <tr>
-                    
-                    <td style="text-align:center">{{ $data->nama }}</td>
-                    <td style="text-align:center">
+                <td style="text-align:center">{{ $loop->iteration }}</td>
+                <td style="text-align:center">{{ $data->nama }}</td>
+                <td style="text-align:center">{{ $data->getJumlahBuku() }}</td>
+                <td style="text-align:center">
  
                     <form action="{{ route('kategori.destroy', $data->id) }}" method="POST">
                         {{ csrf_field() }}
@@ -51,7 +55,6 @@
                         <a class="btn btn-info" href="{{ route('kategori.show',$data->id) }}">Show</a>
                         <a class="btn btn-primary" href="{{ route('kategori.edit',$data->id) }}">Edit</a>
                         <button type="submit" class="btn btn-danger">Hapus</button>
-                    </form>
 
                 </td>
                 
