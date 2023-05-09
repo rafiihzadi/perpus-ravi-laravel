@@ -61,6 +61,7 @@ Route::get('/pdf-buku', [BukuController::class, 'pdf']);
 Route::get('/create-buku', [BukuController::class, 'create']);
 Route::post('/store-buku', [BukuController::class, 'store'])->name('buku.store');
 Route::get('/export-buku', [BukuController::class, 'exportExcel']);
+Route::get('/upload-buku', [BukuController::class, 'upload']);
 
 
 //Penulis

@@ -5,7 +5,7 @@
 <div class="card card-primary">
     <div class="card-header">
         <h2 class="card-title">Data Buku</h2>
-</div>
+    </div>
 
     <div class="row" style="margin-top: 1rem;">
         <div class="col-lg-12 margin-tb">
@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="{{ url('create-buku') }}" class="btn btn-primary btn-flat">
+            <a href="{{ route('create-buku')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf-buku') }}" class="btn btn-danger btn-flat" target="_blank">
@@ -59,16 +59,20 @@
                 <td style="text-align:center">
 
                 <form action="{{ route('buku.destroy', $data->id) }}" method="POST">
-                {{ csrf_field() }}
+                            {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                    <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
-                    <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
-                    <button type="submit" class="btn btn-danger">Hapus</button>                
-                </form>
-                </td>
+                             <a class="btn btn-info" href="{{ route('buku.show',$data->id) }}">Show</a>
+                             <a class="btn btn-primary" href="{{ route('buku.edit',$data->id) }}">Edit</a>
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
+                
                 @endforeach
+                </tr>
+                
             </table>
+            
         </div>
     </div>
 </div>
