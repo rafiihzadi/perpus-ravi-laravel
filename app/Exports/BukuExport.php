@@ -31,7 +31,7 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
         return [
             $buku->nama,
             $buku->tahun_terbit,
-            $buku->penulis->nama,
+            $buku->penulis,
             $buku->penerbit->nama,
             $buku->kategori->nama,
             $buku->sinopsis,
@@ -77,7 +77,7 @@ class BukuExport implements FromCollection, WithHeadings, ShouldAutoSize,  WithM
         return [
             AfterSheet::class    => function(AfterSheet $event)
             {
-                $event->sheet->getStyle('A1:F4')->ApplyFromArray([
+                $event->sheet->getStyle('A1:F3')->ApplyFromArray([
                     'borders' => [ 
                         'allBorders' =>[
                             'borderStyle' => 

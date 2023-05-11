@@ -18,15 +18,15 @@
             </tr>
             <tr>
                 <th style="width: 180px">Penulis</th>
-                <td>{{ $buku->id_penulis}}</td>
+                <td>{{ $buku->penulis->nama}}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Penerbit</th>
-                <td>{{ $buku->id_penerbit}}</td>
+                <td>{{ $buku->penerbit->nama}}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Kategori</th>
-                <td>{{ $buku->id_kategori}}</td>
+                <td>{{ $buku->kategori->nama}}</td>
             </tr>
             <tr>
                 <th style="width: 180px">Sinopsis</th>
@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <th style="width: 180px">Sampul</th>
-                <td>{{ $buku->sampul}}</td>
+                <td><img src="{{ asset('image/'.$buku->sampul) }}" width="89px"></td>
             </tr>
         </table>
         <footer class="mt-3">

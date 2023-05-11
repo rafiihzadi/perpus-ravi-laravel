@@ -50,12 +50,12 @@
                 <tr>
                 <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
-                    <td style="text-align:center">{{ $data->tahun_terbit }}</td>
-                    <td style="text-align:center">{{ @$data->penulis->nama }}</td>
+                    <td style="text-align:center">{{ @$data->nama }}</td>
+                    <td style="text-align:center">{{ $data->nama }}</td>
                     <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
                     <td style="text-align:center">{{ @$data->kategori->nama }}</td>
                     <td style="text-align:center">{{ $data->sinopsis }}</td>
-                    <td style="text-align:center"><img src="{{ asset('image/'.$data->sampul) }}" width="300px"></td>
+                    <td style="text-align:center"><img src="{{ asset('image/'.$data->sampul) }}" width="89px"></td>
                 <td style="text-align:center">
 
                 <form action="{{ route('buku.destroy', $data->id) }}" method="POST">
