@@ -23,7 +23,7 @@
 
     <div class="card-body">
         <div style="margin-bottom: 20px">
-            <a href="{{ route('create-buku')}}" class="btn btn-primary btn-flat">
+            <a href="{{ url('/create-buku')}}" class="btn btn-primary btn-flat">
                 <i class="fa fa-plus-circle"></i> Tambah Data
             </a>
             <a href="{{ url('pdf-buku') }}" class="btn btn-danger btn-flat" target="_blank">
@@ -55,7 +55,7 @@
                     <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
                     <td style="text-align:center">{{ @$data->kategori->nama }}</td>
                     <td style="text-align:center">{{ $data->sinopsis }}</td>
-                    <td style="text-align:center">{{ $data->sampul }}</td>
+                    <td style="text-align:center"><img src="{{ asset('image/'.$data->sampul) }}" width="300px"></td>
                 <td style="text-align:center">
 
                 <form action="{{ route('buku.destroy', $data->id) }}" method="POST">

@@ -56,17 +56,28 @@ class BukuController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'nama' => 'required|max:255',
+            'tahun_terbit' => 'required',
+            'id_penulis' => 'required',
+            'id_penerbit' => 'required',
+            'id_kategori' => 'required',
+            'sinopsis' => 'required',
+            'sampul' => 'required|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
-        $buku = new Buku;
-        $buku->nama = $request->nama;
-        $buku->tahun_terbit = $request->tahun_terbit;
-        $buku->id_penulis = $request->id_penulis;
-        $buku->id_penerbit = $request->id_penerbit;
-        $buku->id_kategori = $request->id_kategori;
-        $buku->sinopsis = $request->sinopsis;
-        $buku->sampul = $request->sampul;
-        $buku->save();
+        ]);
+
+        $input = $request->all();
+
+        if($sampul = $request->file('sampul')){
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $sampul->getClientOriginalExtension();
+            $sampul->move($destinationPath, $profileImage);
+            $input['sampul'] = "$profileImage";
+        }
         
+        Buku::create($input);
+
         return redirect()->route('buku.index');
     }
 
