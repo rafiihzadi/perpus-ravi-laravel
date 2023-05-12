@@ -42,7 +42,7 @@
             <td>{{ @$value->penerbit->nama }}</td>
             <td>{{ @$value->kategori->nama}}</td>
             <td>{{ $value->sinopsis }}</td>
-			<img src="{{ asset('image/'.$value->sampul) }}" width="89px"></td>
+			<img src="{{ asset('image/'.$value->sampul) }}" width="84px"></td>
 		</tr>
 			@endforeach
 		</tbody>
