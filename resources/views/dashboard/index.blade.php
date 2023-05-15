@@ -67,101 +67,95 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-    <div id="container"></div>
-</div>
-</div>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
-<script type="text/javascript">
-  Highcharts.chart('container', {
+    <body>
+      
+      <head>
+      <title>Jenis instansi</title>
+      <script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="https://code.highcharts.com/modules/exporting.js"></script>
+      <script src="https://code.highcharts.com/modules/export-data.js"></script>
+      <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+      </head>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-sm-6">
+				<div id="container"></div>
+      </div>
+      
+      
+      <script type="text/javascript">
+        
+Highcharts.chart('container', {
     chart: {
-        zoomType: 'xy'
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Monthly weather in Karasjok, 2021',
+        text: 'Browser market shares in May, 2020',
         align: 'left'
     },
-    subtitle: {
-        text: 'Source: ' +
-            '<a href="https://www.yr.no/nb/historikk/graf/5-97251/Norge/Troms%20og%20Finnmark/Karasjok/Karasjok?q=2021"' +
-            'target="_blank">YR</a>',
-        align: 'left'
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
     },
-    xAxis: [{
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        crosshair: true
-    }],
-    yAxis: [{ // Primary yAxis
-        labels: {
-            format: '{value}°C',
-            style: {
-                color: Highcharts.getOptions().colors[1]
-            }
-        },
-        title: {
-            text: 'Temperature',
-            style: {
-                color: Highcharts.getOptions().colors[1]
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
             }
         }
-    }, { // Secondary yAxis
-        title: {
-            text: 'Precipitation',
-            style: {
-                color: Highcharts.getOptions().colors[0]
-            }
-        },
-        labels: {
-            format: '{value} mm',
-            style: {
-                color: Highcharts.getOptions().colors[0]
-            }
-        },
-        opposite: true
-    }],
-    tooltip: {
-        shared: true
-    },
-    legend: {
-        align: 'left',
-        x: 80,
-        verticalAlign: 'top',
-        y: 80,
-        floating: true,
-        backgroundColor:
-            Highcharts.defaultOptions.legend.backgroundColor || // theme
-            'rgba(255,255,255,0.25)'
     },
     series: [{
-        name: 'Precipitation',
-        type: 'column',
-        yAxis: 1,
-        data: [27.6, 28.8, 21.7, 34.1, 29.0, 28.4, 45.6, 51.7, 39.0,
-            60.0, 28.6, 32.1],
-        tooltip: {
-            valueSuffix: ' mm'
-        }
-
-    }, {
-        name: 'Temperature',
-        type: 'spline',
-        data: [-13.6, -14.9, -5.8, -0.7, 3.1, 13.0, 14.5, 10.8, 5.8,
-            -0.7, -11.0, -16.4],
-        tooltip: {
-            valueSuffix: '°C'
-        }
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Chrome',
+            y: 70.67,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'Edge',
+            y: 14.77
+        },  {
+            name: 'Firefox',
+            y: 4.86
+        }, {
+            name: 'Safari',
+            y: 2.63
+        }, {
+            name: 'Internet Explorer',
+            y: 1.53
+        },  {
+            name: 'Opera',
+            y: 1.40
+        }, {
+            name: 'Sogou Explorer',
+            y: 0.84
+        }, {
+            name: 'QQ',
+            y: 0.51
+        }, {
+            name: 'Other',
+            y: 2.6
+        }]
     }]
 });
 
 
-       
 
-@endsection
+        </script>
+</body>
+</div>
+
+    <
