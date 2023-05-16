@@ -2,22 +2,20 @@
 
 @section('content')
 
-    <div class="content">
 
     <div class="card card-primary">
-    <div class="card-header">
-        <h2 class="card-title">Rekap</h2>
+    <h2 class="card-title">Data Grafik</h2>
+
     </div>
 
-        <!-- Small boxes (Stat box) -->
-        <div class="card-body">
+        <section class="content">
+        <div class="container-fluid">
         <div class="row">
           <div class="col-lg-3 col-6">
-            <!-- small box -->
-
             <div class="small-box bg-info">
               <div class="inner">
-                
+                <h3>150</h3>
+                <p>New Orders</p>
               </div>
 
               <div class="icon">
@@ -26,12 +24,14 @@
               <a href="" target="_blank" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
             <div class="small-box bg-success">
               <div class="inner">
-               
+              <h3> 
+                  53
+                  <sup style="font-size: 20px">%</sup>
+                </h3>
+                <p>Bounce Rate</p>               
               </div>
               <div class="icon">
                 <i class="nav-icon fas fa-building"></i>
@@ -39,25 +39,23 @@
               <a href="" target="_blank" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
           <div class="col-lg-3 col-6">
-            <!-- small box -->
             <div class="small-box bg-warning">
               <div class="inner">
-               
-              </div>
-
-              <div class="icon">
+                <h3>44</h3>
+                <p>User Registrations</p>
+            </div>
+            <div class="icon">
                 <i class="nav-icon fas fa-pencil-alt"></i>
               </div>
               <a href="" target="_blank" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
+            <div class="col-lg-3 col-6">
             <div class="small-box bg-danger">
               <div class="inner">
+                <h3>65</h3>
+                <p>Unique Visitors</p>
                 
               </div>
               <div class="icon">
@@ -78,16 +76,22 @@
       <script src="https://code.highcharts.com/modules/export-data.js"></script>
       <script src="https://code.highcharts.com/modules/accessibility.js"></script>
       </head>
-      <div class="container">
+      <div class="row">
+        <div class="col-12">
+        <div class="card ">
+        <div class="card-body">
         <div class="row">
-          <div class="col-sm-6 col-sm-6">
-				<div id="container"></div>
-      </div>
+          <div class="col-sm-6 col-sm-6" id="container1" style="height: 750;"></div>
+          <div class="col-sm-6 col-sm-6" id="container2" style="height: 750;"></div>
+            </div>
+          </div>
+          </div>
+          </div>
       
       
       <script type="text/javascript">
         
-Highcharts.chart('container', {
+Highcharts.chart('container1', {
     chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -120,42 +124,123 @@ Highcharts.chart('container', {
         name: 'Brands',
         colorByPoint: true,
         data: [{
-            name: 'Chrome',
+            name: 'Data Buku',
             y: 70.67,
             sliced: true,
             selected: true
-        }, {
-            name: 'Edge',
-            y: 14.77
         },  {
-            name: 'Firefox',
+            name: 'Anggota',
             y: 4.86
         }, {
-            name: 'Safari',
+            name: 'Peminjaman',
             y: 2.63
         }, {
-            name: 'Internet Explorer',
+            name: 'Kategori',
             y: 1.53
         },  {
-            name: 'Opera',
+            name: 'Penerbit',
             y: 1.40
         }, {
-            name: 'Sogou Explorer',
+            name: 'Penulis',
             y: 0.84
-        }, {
-            name: 'QQ',
-            y: 0.51
-        }, {
-            name: 'Other',
-            y: 2.6
         }]
     }]
 });
 
 
+Highcharts.chart('container2', {
+    chart: {
+        zoomType: 'xy'
+    },
+    title: {
+        text: 'Monthly weather in Karasjok, 2021',
+        align: 'left'
+    },
+    subtitle: {
+        text: 'Source: ' +
+            '<a href="https://www.yr.no/nb/historikk/graf/5-97251/Norge/Troms%20og%20Finnmark/Karasjok/Karasjok?q=2021"' +
+            'target="_blank">YR</a>',
+        align: 'left'
+    },
+    xAxis: [{
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+            'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        crosshair: true
+    }],
+    yAxis: [{ // Primary yAxis
+        labels: {
+            format: '{value}°C',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        },
+        title: {
+            text: 'Temperature',
+            style: {
+                color: Highcharts.getOptions().colors[1]
+            }
+        }
+    }, { // Secondary yAxis
+        title: {
+            text: 'Precipitation',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        labels: {
+            format: '{value} mm',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
+        },
+        opposite: true
+    }],
+    tooltip: {
+        shared: true
+    },
+    legend: {
+        align: 'left',
+        x: 80,
+        verticalAlign: 'top',
+        y: 80,
+        floating: true,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || // theme
+            'rgba(255,255,255,0.25)'
+    },
+    series: [{
+        name: 'Precipitation',
+        type: 'column',
+        yAxis: 1,
+        data: [27.6, 28.8, 21.7, 34.1, 29.0, 28.4, 45.6, 51.7, 39.0,
+            60.0, 28.6, 32.1],
+        tooltip: {
+            valueSuffix: ' mm'
+        }
 
-        </script>
+    }, {
+        name: 'Temperature',
+        type: 'spline',
+        data: [-13.6, -14.9, -5.8, -0.7, 3.1, 13.0, 14.5, 10.8, 5.8,
+            -0.7, -11.0, -16.4],
+        tooltip: {
+            valueSuffix: '°C'
+        }
+    }]
+});
+
+ </script>
 </body>
-</div>
+  </td>
+</tr>
 
-    <
+</tr>
+
+</table>
+
+</div>
+</div>
+</div>
+  @endsection
+  
+  
