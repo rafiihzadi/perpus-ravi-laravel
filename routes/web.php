@@ -73,6 +73,7 @@ Route::post('/store-penulis', [PenulisController::class, 'store'])->name('penuli
 Route::get('/export-penulis', [PenulisController::class, 'exportExcel']);
 
 
+
 //Penerbit
 Route::get('/penerbit', [PenerbitController::class, 'index'])->name('penerbit.index');
 Route::resource('penerbit', PenerbitController::class);
