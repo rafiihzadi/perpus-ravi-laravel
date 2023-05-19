@@ -81,6 +81,7 @@ Route::get('/pdf-penerbit', [PenerbitController::class, 'pdf']);
 Route::get('/create-penerbit', [PenerbitController::class, 'create']);
 Route::post('/store-penerbit', [PenerbitController::class, 'store'])->name('penerbit.store');
 Route::get('/export-penerbit', [PenerbitController::class, 'exportExcel']);
+Route::get('/grafik-penerbit', [PenerbitController::class, 'grafik']);
 
 
 

@@ -230,6 +230,58 @@
         </div>
     </div>
 </div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+   Highcharts.chart('kategori', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in May, 2020',
+        align: 'left'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Self Improvement',
+            y: 5.99,
+            drilldown: true,
+        },  {
+            name: 'Fiksi',
+            y: 4.86
+        }, {
+            name: 'Komik',
+            y: 4.86
+        }, {
+            name: 'Sastra',
+            y: 4.86
+        
+        }]
+    }]
+});
+</script>
 
 
 
