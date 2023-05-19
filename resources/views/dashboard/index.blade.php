@@ -163,65 +163,55 @@
             </div>
         </div>
     </div>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>    
+    
     <script>
-   Highcharts.chart('penulis', {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
-    title: {
-        text: 'Browser market shares in May, 2020',
-        align: 'left'
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
-        }
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-            }
-        }
-    },
-    series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Data Buku',
-            y: 70.67,
-            sliced: true,
-            selected: true
-        },  {
-            name: 'Anggota',
-            y: 4.86
-        }, {
-            name: 'Peminjaman',
-            y: 2.63
-        }, {
-            name: 'Kategori',
-            y: 1.53
-        },  {
-            name: 'Penerbit',
-            y: 1.40
-        }, {
-            name: 'Penulis',
-            y: 0.84
-        }]
-    }]
-});
-</script>
-
+        Highcharts.chart('penulis', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Penulis Buku'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Ardhi Mohamad',
+                    'Henry Manampiring',
+                    'Arthur Conan Doyle',
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                title: {
+                    useHTML: true,
+                    text: 'Jumlah Buku'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Buku',
+                data: [10.14, 10.55, 12.44]
+    
+            }]
+        });
+    </script>
+    
     <div class="col-sm-6">
         <div class="card">
             <div class="card-header bg-primary">
