@@ -29,6 +29,11 @@ class Penulis extends Model
         return $query->count();
     }
 
+    public function getListBuku()
+    {
+        $buku = Buku::where('id_penulis', '=', $this->id)->get();
 
-
+        return $buku;
+    
+    }
 }

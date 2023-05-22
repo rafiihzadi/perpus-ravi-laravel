@@ -50,8 +50,8 @@
                 <tr>
                 <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ $data->nama }}</td>
-                    <td style="text-align:center">{{ @$data->nama }}</td>
-                    <td style="text-align:center">{{ $data->nama }}</td>
+                    <td style="text-align:center">{{ @$data->tahun_terbit }}</td>
+                    <td style="text-align:center">{{ $data->penulis->nama }}</td>
                     <td style="text-align:center">{{ @$data->penerbit->nama }}</td>
                     <td style="text-align:center">{{ @$data->kategori->nama }}</td>
                     <td style="text-align:center">{{ $data->sinopsis }}</td>

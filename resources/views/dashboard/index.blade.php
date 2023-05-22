@@ -95,8 +95,43 @@
         </div>
     </div>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>    
-    
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                Grafik Buku Berdasarkan Penulis
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="penulis">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                Grafik Buku Berdasarkan Kategori
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                           <div id="kategori">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>       
 <script>
     Highcharts.chart('penerbit', {
         chart: {
@@ -144,111 +179,51 @@
     });
 </script>
 
-
-
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-header bg-primary">
-                Grafik Buku Berdasarkan Penulis
-            </div>
-            <div class="card-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="penulis">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script>
+<script>
    Highcharts.chart('penulis', {
     chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
+        type: 'bar'
     },
     title: {
-        text: 'Browser market shares in May, 2020',
-        align: 'left'
+        text: 'Penulis Buku'
     },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    subtitle: {
+        text: ''
     },
-    accessibility: {
-        point: {
-            valueSuffix: '%'
+    xAxis: {
+        categories: [
+            'Ardhi Mohamad', 'Henry Manampiring', 'Arthur Conan Doyle'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        title: {
+            useHTML: true,
+            text: 'Jumlah Buku'
         }
     },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
     plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-            }
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
         }
     },
     series: [{
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Data Buku',
-            y: 70.67,
-            sliced: true,
-            selected: true
-        },  {
-            name: 'Anggota',
-            y: 4.86
-        }, {
-            name: 'Peminjaman',
-            y: 2.63
-        }, {
-            name: 'Kategori',
-            y: 1.53
-        },  {
-            name: 'Penerbit',
-            y: 1.40
-        }, {
-            name: 'Penulis',
-            y: 0.84
-        }]
+        name: 'Buku',
+        data: [15.93, 13.63, 18.73,]
+
     }]
 });
 </script>
 
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-header bg-primary">
-                Grafik Buku Berdasarkan Kategori
-            </div>
-            <div class="card-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                           <div id="kategori">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-        
-      
-      
 @endsection
   
   
