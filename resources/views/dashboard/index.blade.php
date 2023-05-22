@@ -179,8 +179,99 @@
     });
 </script>
 
+<<<<<<< HEAD
 <script>
    Highcharts.chart('penulis', {
+=======
+
+
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                Grafik Buku Berdasarkan Penulis
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="penulis">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>    
+    
+    <script>
+        Highcharts.chart('penulis', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Penulis Buku'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
+                    'Ardhi Mohamad',
+                    'Henry Manampiring',
+                    'Arthur Conan Doyle',
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                title: {
+                    useHTML: true,
+                    text: 'Jumlah Buku'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Buku',
+                data: [10.14, 10.55, 12.44]
+    
+            }]
+        });
+    </script>
+    
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-header bg-primary">
+                Grafik Buku Berdasarkan Kategori
+            </div>
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                           <div id="kategori">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+    <script>
+   Highcharts.chart('kategori', {
     chart: {
         type: 'bar'
     },
@@ -220,9 +311,27 @@
         name: 'Buku',
         data: [15.93, 13.63, 18.73,]
 
+        name: 'Brands',
+        colorByPoint: true,
+        data: [{
+            name: 'Self Improvement',
+            y: 5.99,
+            drilldown: true,
+        },  {
+            name: 'Fiksi',
+            y: 4.86
+        }, {
+            name: 'Komik',
+            y: 4.86
+        }, {
+            name: 'Sastra',
+            y: 4.86
+        
+        }]
     }]
 });
 </script>
+
 
 @endsection
   
