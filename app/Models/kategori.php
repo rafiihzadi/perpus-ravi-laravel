@@ -28,6 +28,13 @@ class Kategori extends Model
 
         return $query->count();
     }
+    public function getListBuku()
+    {
+        $buku = Buku::where('id_kategori', '=', $this->id)->get();
+
+        return $buku;
+    
+    }
 
 
 }

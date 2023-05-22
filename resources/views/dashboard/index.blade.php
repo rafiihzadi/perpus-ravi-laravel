@@ -94,68 +94,20 @@
             </div>
         </div>
     </div>
-
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-header bg-primary">
-                Grafik Buku Berdasarkan Penulis
-            </div>
-            <div class="card-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="penulis">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-sm-6">
-        <div class="card">
-            <div class="card-header bg-primary">
-                Grafik Buku Berdasarkan Kategori
-            </div>
-            <div class="card-body">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-sm-12">
-                           <div id="kategori">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-<script src="https://code.highcharts.com/highcharts.js"></script>       
+    <script src="https://code.highcharts.com/highcharts.js"></script>       
 <script>
     Highcharts.chart('penerbit', {
         chart: {
             type: 'column'
         },
         title: {
-            text: 'Penerbit Buku'
-        },
-        subtitle: {
-            text: ''
+            text: 'Grafik Data Penerbit Buku'
+        
         },
         xAxis: {
-            categories: [
-                'Gramedia',
-                'Kompas',
-                'Rafi Publishing',
+            categories: ['A', 'B','C'
             ],
             crosshair: true
-        },
-        yAxis: {
-            title: {
-                useHTML: true,
-                text: 'Jumlah Buku'
-            }
         },
         tooltip: {
             headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
@@ -179,11 +131,6 @@
     });
 </script>
 
-<<<<<<< HEAD
-<script>
-   Highcharts.chart('penulis', {
-=======
-
 
     <div class="col-sm-6">
         <div class="card">
@@ -202,8 +149,8 @@
             </div>
         </div>
     </div>
+
     <script src="https://code.highcharts.com/highcharts.js"></script>    
-    
     <script>
         Highcharts.chart('penulis', {
             chart: {
@@ -250,7 +197,8 @@
             }]
         });
     </script>
-    
+
+
     <div class="col-sm-6">
         <div class="card">
             <div class="card-header bg-primary">
@@ -268,18 +216,18 @@
             </div>
         </div>
     </div>
-</div>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-    <script>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script>
    Highcharts.chart('kategori', {
     chart: {
-        type: 'bar'
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
     },
     title: {
-        text: 'Penulis Buku'
-    },
-    subtitle: {
-        text: ''
+        text: 'Kategori Buku'
     },
     xAxis: {
         categories: [
@@ -294,40 +242,42 @@
         }
     },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-        footerFormat: '</table>',
-        shared: true,
-        useHTML: true
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+
     },
     plotOptions: {
-        column: {
-            pointPadding: 0.2,
-            borderWidth: 0
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                connectorColor: 'silver'
+            }
         }
     },
     series: [{
-        name: 'Buku',
-        data: [15.93, 13.63, 18.73,]
-
-        name: 'Brands',
-        colorByPoint: true,
-        data: [{
-            name: 'Self Improvement',
-            y: 5.99,
-            drilldown: true,
-        },  {
-            name: 'Fiksi',
-            y: 4.86
-        }, {
-            name: 'Komik',
-            y: 4.86
-        }, {
-            name: 'Sastra',
-            y: 4.86
-        
-        }]
+        name: 'Share',
+        data: [
+            { name: 'Self Improvement', 
+                y: 5.99,
+                drilldown: true,  
+            },
+            { name: 'Fiksi', 
+                y: 4.86 
+            },
+            { name: 'Komik', 
+                y: 4.86 
+            },
+            { name: 'Sastra', 
+                y: 4.86 
+            },
+        ]
     }]
 });
 </script>

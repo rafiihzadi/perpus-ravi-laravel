@@ -28,7 +28,11 @@ class Penerbit extends Model
 
         return $query->count();
     }
+     public function getListBuku()
+    {
+        $buku = Buku::where('id_penerbit', '=', $this->id)->get();
 
-
-
+        return $buku;
+    
+    }
 }
