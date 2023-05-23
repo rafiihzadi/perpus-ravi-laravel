@@ -58,6 +58,13 @@
             <div class="form-group">
                 <strong>Tanggal Pinjam:</strong>
                 <input type="text" name="tanggal pinjam" class="form-control" value="{{ $peminjaman->tanggal_pinjam }}">
+                <input type="text"
+                    class="datepicker-here form-control"
+                    data-language='en'
+                    name="tanggal_pinjam"
+                    data-multiple-dates="3"
+                    data-multiple-dates-separator=","
+                    data-position='top left'/>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -75,8 +82,23 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="{{ route('peminjaman.index') }}" class="btn btn-warning">Kembali</a>
-        </div>
     </div>
+    <script>
+
+          $(document).ready(function() {            
+
+            $('#date').datepicker({                      
+
+                format: 'yyyy-mm-dd',
+
+                autoclose: true,
+
+            }); 
+
+          });
+
+        </script>
+        </div>
 
 </form>
 @endsection

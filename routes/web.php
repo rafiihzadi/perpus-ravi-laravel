@@ -103,6 +103,8 @@ Route::get('/pdf-peminjaman', [PeminjamanController::class, 'pdf']);
 Route::get('/create-peminjaman', [PeminjamanController::class, 'create']);
 Route::post('/store-peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
 Route::get('/export-peminjaman', [PeminjamanController::class, 'exportExcel']);
+Route::post('/save-date', 'PeminjmanController@saveDate');
+
 
 
 //Anggota

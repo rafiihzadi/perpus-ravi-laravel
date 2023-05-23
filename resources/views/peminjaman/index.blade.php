@@ -51,7 +51,7 @@
                 <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ @$data->buku->nama}}</td>
                     <td style="text-align:center">{{ @$data->anggota->nama}}</td>
-                    <td style="text-align:center" style="text_align:center">{{ $data->tanggal_pinjam }}</td>
+                    <td style="text-align:center" style="text_align:center">{{ @$data->tanggal_pinjam->nama }}</td>
                     <td style="text-align:center">{{ $data->tanggal_kembali }}</td>
                     <td style="text-align:center">{{ $data->denda }}</td>
                     <td style="text-align:center">{{ $data->status }}</td>
