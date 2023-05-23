@@ -94,41 +94,46 @@
             </div>
         </div>
     </div>
-    <script src="https://code.highcharts.com/highcharts.js"></script>       
-<script>
-    Highcharts.chart('penerbit', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Grafik Data Penerbit Buku'
-        
-        },
-        xAxis: {
-            categories: ['A', 'B','C'
-            ],
-            crosshair: true
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
-            }
-        },
-        series: [{
-            name: 'Buku',
-            data: [10.14, 10.55, 12.44]
 
-        }]
-    });
+<script src="https://code.highcharts.com/highcharts.js"></script>       
+<script>
+$.ajax({
+    url: {{ route('chart-data') }},
+    method : 'GET',
+    success: function ($data) {
+        Highcharts.chart('penerbit', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Grafik Data Penerbit Buku'
+            
+            },
+            xAxis: {
+               type : 'category'
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'name',
+                data: data
+
+            }]
+        });
+    }
+});
 </script>
 
 

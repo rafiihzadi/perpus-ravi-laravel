@@ -113,5 +113,8 @@ Route::get('/create-anggota', [AnggotaController::class, 'create']);
 Route::post('/store-anggota', [AnggotaController::class, 'store'])->name('anggota.store');
 Route::get('/export-anggota', [AnggotaController::class, 'exportExcel']);
 
+//Dashboard
+Route::get('/chart-data', [DashboardController::class, 'getChartPenerbit'])->name('chart-data');
+
 
 
