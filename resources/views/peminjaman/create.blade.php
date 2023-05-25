@@ -54,14 +54,7 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>tanggal pinjam</strong>
-                  <!-- <input type="text" name="tanggal pinjam" class="form-control" placeholder="" id="datepicker"> -->
-                  <input type="text"
-                    class="datepicker-here form-control"
-                    data-language='en'
-                    name="tanggal_pinjam"
-                    data-multiple-dates="3"
-                    data-multiple-dates-separator=","
-                    data-position='top left'/>
+                  <input type="date" name="tanggal pinjam" class="form-control" placeholder="" id="datepicker">
               </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
