@@ -27,7 +27,5 @@ class Peminjaman extends Model
         return $this->belongsTo(Anggota::class,'id_anggota','id');
     }
 
-    public $timestamps      = false;
-
 
 }

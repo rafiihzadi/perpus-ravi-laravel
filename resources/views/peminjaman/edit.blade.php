@@ -57,26 +57,27 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Pinjam:</strong>
-                <input type="text" name="tanggal pinjam" class="form-control" value="{{ $peminjaman->tanggal_pinjam }}">
-                <input type="text"
-                    class="datepicker-here form-control"
-                    data-language='en'
-                    name="tanggal_pinjam"
-                    data-multiple-dates="3"
-                    data-multiple-dates-separator=","
-                    data-position='top left'/>
-            </div>
+                <input type="date" name="tanggal pinjam" class="form-control" value="{{ $peminjaman->tanggal_pinjam }}">
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Tanggal Kembali:</strong>
-                <input type="text" name="tanggal kembali" class="form-control" value="{{ $peminjaman->tanggal_kembali }}">
+                <input type="date" name="tanggal kembali" class="form-control" value="{{ $peminjaman->tanggal_kembali }}">
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Denda:</strong>
                 <input type="text" name="denda" class="form-control" value="{{ $peminjaman->denda }}">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Status:</strong>
+                <select class="form-control">
+                        <option>Sedang dipinjam</option>
+                        <option>Belum dikembalikan</option>
+                </select>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">

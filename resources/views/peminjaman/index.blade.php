@@ -42,8 +42,7 @@
                     <th style="text-align:center;">Tanggal Pinjam</th>
                     <th style="text-align:center;">Tanggal Kembali</th>
                     <th style="text-align:center">Denda</th>
-                    <th width="200px" style="text-align: center;">Status</th>
-
+                    <th style="text-align:center">Status</th>
                     <th width="250px" style="text-align: center;">Opsi</th>
                 </tr>
                 @foreach($peminjaman as $data)
@@ -51,7 +50,7 @@
                 <td style="text-align:center">{{ $loop->iteration }}</td>
                     <td style="text-align:center">{{ @$data->buku->nama}}</td>
                     <td style="text-align:center">{{ @$data->anggota->nama}}</td>
-                    <td style="text-align:center" style="text_align:center">{{ @$data->tanggal_pinjam->nama }}</td>
+                    <td style="text-align:center" style="text_align:center">{{ $data->tanggal_pinjam }}</td>
                     <td style="text-align:center">{{ $data->tanggal_kembali }}</td>
                     <td style="text-align:center">{{ $data->denda }}</td>
                     <td style="text-align:center">{{ $data->status }}</td>

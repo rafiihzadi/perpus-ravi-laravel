@@ -54,20 +54,12 @@
           <div class="col-xs-12 col-sm-12 col-md-12">
               <div class="form-group">
                   <strong>tanggal pinjam</strong>
-                  <!-- <input type="text" name="tanggal pinjam" class="form-control" placeholder="" id="datepicker"> -->
-                  <input type="text"
-                    class="datepicker-here form-control"
-                    data-language='en'
-                    name="tanggal_pinjam"
-                    data-multiple-dates="3"
-                    data-multiple-dates-separator=","
-                    data-position='top left'/>
-              </div>
+                  <input type="date" name="tanggal pinjam" class="form-control" placeholder="" id="datepicker">
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>tanggal kembali</strong>
-                    <input type="text" name="tanggal kembali" class="form-control" placeholder="">
+                    <input type="date" name="tanggal kembali" class="form-control" placeholder="">
                 </div>
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
@@ -79,8 +71,10 @@
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
                     <strong>status</strong>
-                    <input type="text" name="denda" class="form-control" placeholder="">
-                    
+                    <select type="status" class="form-control">
+                        <option>Sedang dipinjam</option>
+                        <option>Belum dikembalikan</option>
+                    </select>
                 </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-12">

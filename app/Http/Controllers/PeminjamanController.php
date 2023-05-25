@@ -175,11 +175,6 @@ class PeminjamanController extends Controller
         $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
         $writer->save($path . $filename);
         return $writer;
-}
-public function saveDate(Request $request)
-{
-    $date = $request->input('date');
 
-    return response()->json(['message' => 'Tanggal berhasil disimpan']);
 }
 }
