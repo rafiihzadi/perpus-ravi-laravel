@@ -55,6 +55,10 @@
               <div class="form-group">
                   <strong>tanggal pinjam</strong>
                   <input type="date" name="tanggal pinjam" class="form-control" placeholder="" id="datepicker">
+<<<<<<< HEAD
+=======
+              </div>
+>>>>>>> 138af61889673ac8ba551572dc58c69da4a0b4c5
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
