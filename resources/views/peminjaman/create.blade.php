@@ -55,10 +55,7 @@
               <div class="form-group">
                   <strong>tanggal pinjam</strong>
                   <input type="date" name="tanggal pinjam" class="form-control" placeholder="" id="datepicker">
-<<<<<<< HEAD
-=======
               </div>
->>>>>>> 138af61889673ac8ba551572dc58c69da4a0b4c5
           </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
@@ -74,10 +71,11 @@
                 </div>
           <div class="col-xs-12 col-sm-6 col-md-12">
                 <div class="form-group">
-                    <strong>status</strong>
-                    <select type="status" class="form-control">
-                        <option>Sedang dipinjam</option>
-                        <option>Belum dikembalikan</option>
+                    <label for="status">Status</label>
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_status_peminjaman">
+                    @foreach($status_peminjaman as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
                     </select>
                 </div>
           </div>
@@ -86,21 +84,6 @@
 
               <a href="{{ url('peminjaman') }}" class="btn btn-warning">Kembali</a>
         </div>
-      <script>
-          $(document).ready(function() {            
-    
-            $('#date').datepicker({                      
-    
-                format: 'yyyy-mm-dd',
-    
-                autoclose: true,
-    
-            }); 
-    
-          });
-    
-        </script>
-      </form>
-
+    </div>
 </div>
 @endsection

@@ -71,15 +71,16 @@
                 <input type="text" name="denda" class="form-control" value="{{ $peminjaman->denda }}">
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Status:</strong>
-                <select class="form-control">
-                        <option>Sedang dipinjam</option>
-                        <option>Belum dikembalikan</option>
-                </select>
-            </div>
-        </div>
+        <div class="col-xs-12 col-sm-6 col-md-12">
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select class="js-example-basic-single" style="width: 100%;" name="id_status_peminjaman">
+                    @foreach($status_peminjaman as $item)
+                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                    @endforeach
+                    </select>
+                </div>
+          </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
                 <button type="submit" class="btn btn-primary">Simpan</button>
                 <a href="{{ route('peminjaman.index') }}" class="btn btn-warning">Kembali</a>

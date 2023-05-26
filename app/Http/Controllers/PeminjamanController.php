@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Peminjaman;
 use App\Models\Buku;
 use App\Models\Anggota;
+use App\Models\StatusPeminjaman;
 use PDF;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -36,11 +37,14 @@ class PeminjamanController extends Controller
      */
     public function create()
     {
+
         $buku = Buku::all();
+
+        $status_peminjaman = StatusPeminjaman::all();
 
         $anggota = Anggota::all();
 
-        return view('peminjaman.create',compact('buku','anggota'));
+        return view('peminjaman.create',compact('buku','anggota','status_peminjaman'));
     }
 
     /**
@@ -51,18 +55,17 @@ class PeminjamanController extends Controller
      */
     public function store(Request $request)
     {
+
         $peminjaman = new Peminjaman;
         $peminjaman->id_buku = $request->id_buku;
         $peminjaman->id_anggota = $request->id_anggota;
         $peminjaman->tanggal_pinjam = $request->tanggal_pinjam;
         $peminjaman->tanggal_kembali = $request->tanggal_kembali;
         $peminjaman->denda = $request->denda;
-        $peminjaman->status = $request->status;
+        $peminjaman->id_status_peminjaman = $request->id_status_peminjaman;
         $peminjaman->save();
 
         return redirect()->route('peminjaman.index');
-
-
     }
 
     /**
@@ -89,8 +92,9 @@ class PeminjamanController extends Controller
         $peminjaman = Peminjaman::find($id);
         $buku = Buku::all();
         $anggota = Anggota::all();
+        $status_peminjaman = StatusPeminjaman::all();
 
-        return view('peminjaman.edit', compact('peminjaman', 'buku', 'anggota'));
+        return view('peminjaman.edit', compact('peminjaman', 'buku', 'anggota','status_peminjaman'));
 
     }
 
@@ -109,7 +113,7 @@ class PeminjamanController extends Controller
             'tanggal pinjam' => $request->tanggal_pinjam,
             'tanggal kembali' => $request->tanggal_kembali,
             'denda' => $request->denda,
-            'status' => $request->status,
+            'id_status_peminjaman' => $request->id_status_peminjaman,
         ]);
         
 
